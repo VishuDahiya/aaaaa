@@ -1,3 +1,4 @@
+import {useNavigation} from '@react-navigation/native';
 import React from 'react';
 import {
   Text,
@@ -9,8 +10,12 @@ import {
   Button,
 } from 'react-native';
 import imagePath from '../constants/imagePath';
+import navigationStrings from '../constants/navigationStrings';
 
 function HeaderDecathlon() {
+  const navigation = useNavigation();
+  let data = {data};
+
   return (
     <>
       <View
@@ -22,7 +27,7 @@ function HeaderDecathlon() {
           },
           shadowOpacity: 0.27,
           shadowRadius: 4.65,
-          elevation: 6,
+          elevation: 15,
         }}>
         <View
           style={{
@@ -72,7 +77,7 @@ function HeaderDecathlon() {
               borderWidth: 0.2,
               borderColor: '#F5F5F5',
               alignItems: 'center',
-              marginHorizontal: 16,
+              marginHorizontal: 18,
               backgroundColor: '#F5F5F5',
               shadowColor: '#000',
               shadowOffset: {
@@ -90,20 +95,38 @@ function HeaderDecathlon() {
             />
             <TextInput
               placeholder="Search 70 Sports 5000 Products"
-              style={{paddingRight: 52}}
+              style={{paddingRight: 49}}
             />
           </View>
-          <View style={{borderWidth: 0.2}}>
-            <Image
-              source={imagePath.headCart}
+
+          <TouchableOpacity
+            onPress={() => {
+              navigation.navigate(navigationStrings.SHOWCART);
+            }}>
+            <View
               style={{
-                height: 40,
-                width: 50,
-                margin: 0,
-                backgroundColor: '#F5F5F5',
-              }}
-            />
-          </View>
+                borderWidth: 0.2,
+                borderColor: '#F5F5F5',
+                shadowColor: '#000',
+                shadowOffset: {
+                  width: 0,
+                  height: 3,
+                },
+                shadowOpacity: 0.27,
+                shadowRadius: 4.65,
+
+                elevation: 0,
+              }}>
+              <Image
+                source={imagePath.headCart}
+                style={{
+                  height: 49,
+                  width: 50,
+                  backgroundColor: '#F5F5F5',
+                }}
+              />
+            </View>
+          </TouchableOpacity>
         </View>
       </View>
     </>

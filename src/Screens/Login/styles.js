@@ -21,33 +21,33 @@ export default StyleSheet.create({
     fontFamily: fontFamily.medium,
     marginTop: moderateScaleVertical(15),
   },
-  socialRow:{
+  socialRow: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
   },
-  socialRowBtn:{
+  socialRowBtn: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    justifyContent: 'space-evenly',
     marginTop: moderateScaleVertical(40),
   },
-  hyphen:{
+  hyphen: {
     width: 20,
     height: 1,
     backgroundColor: colors.textGrey,
     opacity: 0.6,
   },
-  bottomContainer:{
+  bottomContainer: {
     // flex: 1,
     // justifyContent: 'flex-end',
     marginBottom: moderateScaleVertical(30),
   },
-  guestBtn:{
+  guestBtn: {
     marginTop: moderateScaleVertical(20),
     backgroundColor: colors.lightSky,
     borderWidth: 0,
   },
-  orText:{
+  orText: {
     ...commonStyles.mediumFont14,
     lineHeight: 24,
     textAlign: 'center',
@@ -55,5 +55,5 @@ export default StyleSheet.create({
     opacity: 0.6,
     marginTop: 0,
     marginHorizontal: moderateScale(16),
-  }
+  },
 });

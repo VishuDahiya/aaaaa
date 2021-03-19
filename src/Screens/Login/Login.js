@@ -18,6 +18,7 @@ import imagePath from '../../constants/imagePath';
 import navigationStrings from '../../constants/navigationStrings';
 import TextInputWithLabel from '../../Components/TextInputWithLabel';
 import actions from '../../redux/actions/index';
+import validation from '../../utils/validation';
 
 export default function OtpVerification({navigation}) {
   const [state, setState] = useState({
@@ -42,20 +43,6 @@ export default function OtpVerification({navigation}) {
   const {timer} = state;
   return (
     <WrapperContainer>
-      <View
-        style={{
-          height: moderateScaleVertical(80),
-          borderBottomColor: colors.borderLight,
-          paddingHorizontal: moderateScale(24),
-          justifyContent: 'center',
-          borderBottomWidth: 2,
-        }}>
-        <TouchableOpacity
-          onPress={() => navigation.goBack(null)}
-          style={{alignSelf: 'flex-start'}}>
-          <Image source={imagePath.back} />
-        </TouchableOpacity>
-      </View>
       <KeyboardAwareScrollView
         showsVerticalScrollIndicator={false}
         style={{
@@ -63,19 +50,14 @@ export default function OtpVerification({navigation}) {
 
           marginHorizontal: moderateScale(24),
         }}>
-        <View style={{height: moderateScaleVertical(48)}} />
+        <View style={{height: moderateScaleVertical(100)}} />
         <Text style={styles.header}>{strings.LOGIN_YOUR_ACCOUNT}</Text>
         <Text style={styles.txtSmall}>{strings.ENTE_REGISTERED_EMAIL}</Text>
         <View style={{height: moderateScaleVertical(50)}} />
         <BorderTextInput placeholder={strings.YOUR_EMAIL} />
-        <BorderTextInput placeholder={strings.ENTER_PASSWORD} />
-
-        <TextInputWithLabel label="Email" placeholder="Enter your email" />
-
-        <GradientButton
-          containerStyle={{marginTop: moderateScaleVertical(10)}}
-          onPress={_onLogin}
-          btnText={strings.LOGIN_ACCOUNT}
+        <BorderTextInput
+          placeholder={strings.ENTER_PASSWORD}
+          secureTextEntry={true}
         />
 
         <ButtonWithLoader
@@ -96,27 +78,7 @@ export default function OtpVerification({navigation}) {
             <TouchableOpacity>
               <Image source={imagePath.fb} />
             </TouchableOpacity>
-            <TouchableOpacity>
-              <Image source={imagePath.insta} />
-            </TouchableOpacity>
-            <TouchableOpacity>
-              <Image source={imagePath.apple} />
-            </TouchableOpacity>
           </View>
-        </View>
-        <View style={styles.bottomContainer}>
-          <Text style={{...styles.txtSmall, color: colors.textGreyLight}}>
-            {strings.ALREADY_HAVE_AN_ACCOUNT}
-            <Text
-              onPress={moveToNewScreen(navigationStrings.SIGN_UP)}
-              style={{
-                color: colors.themeColor,
-                fontFamily: fontFamily.futuraBtHeavy,
-              }}>
-              {' '}
-              {strings.SIGN_UP}
-            </Text>
-          </Text>
         </View>
       </KeyboardAwareScrollView>
     </WrapperContainer>

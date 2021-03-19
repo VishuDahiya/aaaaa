@@ -61,7 +61,6 @@ export default function OtpVerification({navigation}) {
 
   const onVerifyOtp = () => {
     const {otp} = state;
-    alert(otp);
     navigation.navigate(navigationStrings.HOME);
   };
 
@@ -78,7 +77,6 @@ export default function OtpVerification({navigation}) {
       <View
         style={{
           flex: 1,
-          marginTop: moderateScaleVertical(88),
           marginHorizontal: moderateScale(24),
         }}>
         <Text style={styles.header}>{strings.OTP_VERIFICATION}</Text>

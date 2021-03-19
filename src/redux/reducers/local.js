@@ -1,19 +1,16 @@
-import types from "../types"
+import types from '../types';
 
 const initialState = {
-    internetConnection: false
-}
+  email: '',
+  password: '',
+};
 
 export default function (state = initialState, action) {
-    console.log('swithc case===>>>>')
-    switch (action.type) {
-        case types.NO_INTERNET: {
-            const internetConnection = action.payload.internetConnection
-            return { ...state, internetConnection }
-        }
-
-        default:
-            return state;
+  switch (action.type) {
+    case types.LOGIN: {
+      return {...state};
     }
+    default:
+      return state;
+  }
 }
-

@@ -10,7 +10,7 @@ export default class ItemInfo extends Component {
 
   render() {
     //console.log(this.props.route.params.productDetails.item)
-    let item = this.props.route.params.productDetails.item;
+    let item = this.props.route.params.ProductDetails.item;
     console.log(item);
 
     let {id, image1, name, type, discountPrice, originalPrice, offPrice} = item;

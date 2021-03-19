@@ -8,15 +8,13 @@ import {
   Button,
   Alert,
 } from 'react-native';
-import {TouchableOpacity} from 'react-native-gesture-handler';
-import imagePath from '../../constants/imagePath';
 
 export default class Profile extends Component {
   render() {
     return (
-      <>
+      <View style={{alignItems: 'center', justifyContent: 'center'}}>
         <Text>Profile</Text>
-      </>
+      </View>
     );
   }
 }

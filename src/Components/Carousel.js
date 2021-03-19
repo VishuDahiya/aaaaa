@@ -17,13 +17,22 @@ export default class MyCarousel extends Component {
   state = {
     entries: [
       {
-        imgUrl: require('../assets/images/decHead.png'),
+        imgUrl: require('../assets/images/carousel.jpg'),
       },
       {
-        imgUrl: require('../assets/images/decHead.png'),
+        imgUrl: require('../assets/images/carousel1.jpg'),
       },
       {
-        imgUrl: require('../assets/images/decHead.png'),
+        imgUrl: require('../assets/images/carousel2.jpg'),
+      },
+      {
+        imgUrl: require('../assets/images/carousel3.jpg'),
+      },
+      {
+        imgUrl: require('../assets/images/carousel4.jpg'),
+      },
+      {
+        imgUrl: require('../assets/images/carousel5.jpg'),
       },
     ],
   };
@@ -33,7 +42,7 @@ export default class MyCarousel extends Component {
       <View style={style.slide}>
         <Image
           source={item.imgUrl}
-          style={{width: 418, height: 230, borderRadius: 5}}
+          style={{width: 415, height: 230, borderRadius: 5}}
         />
       </View>
     );

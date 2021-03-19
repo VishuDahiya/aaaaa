@@ -2,7 +2,7 @@ import React from 'react';
 import {View} from 'react-native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import navigationStrings from '../constants/navigationStrings';
-import {Account, Home, Scan, Sports} from '../Screens';
+import {Categories, Explore, Home, Profile} from '../Screens';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 const Tab = createBottomTabNavigator();
 
@@ -25,30 +25,31 @@ export default function BottomTabNavigator() {
         }}
       />
       <Tab.Screen
-        name={navigationStrings.ACCOUNT}
-        component={Account}
+        name={navigationStrings.CATEGORIES}
+        component={Categories}
         options={{
-          tabBarLabel: 'Sports',
+          tabBarLabel: 'Categories',
           tabBarIcon: ({color, size}) => (
             <Ionicons name="ios-home" color="black" size={25} />
           ),
         }}
       />
       <Tab.Screen
-        name={navigationStrings.SCAN}
-        component={Scan}
+        name={navigationStrings.EXPLORE}
+        component={Explore}
         options={{
-          tabBarLabel: 'Scan',
+          tabBarLabel: 'Explore',
           tabBarIcon: ({color, size}) => (
             <Ionicons name="ios-home" color="black" size={25} />
           ),
         }}
       />
       <Tab.Screen
-        name={navigationStrings.ACCOUNT}
-        component={Account}
+        name={navigationStrings.PROFILE}
+        component={Profile}
         options={{
-          tabBarLabel: 'Account',
+          tabBarLabel: 'Profile',
+
           tabBarIcon: ({color, size}) => (
             <Ionicons name="ios-home" color="black" size={25} />
           ),
