@@ -17,7 +17,12 @@ export default {
   SUPERMARKET_PRODUCTS_CATEGORY: 'supermarketProductsCategory',
   PRODUCT_LIST: 'productList',
   CATEGORIES: 'categories',
-  PROFILE: 'profile',
+  PROFILE: 'Profile',
   EXPLORE: 'explore',
   SHOWCART: 'showcart',
+  SEARCH: 'Search',
+  LEFT_DRAWER: 'leftDrawer',
+  CHART: 'Chart',
+  QR_CODE: 'QrCode',
+  IMAGE_ZOOM: 'ImageZoom',
 };

@@ -1,6 +1,6 @@
-import React, {useEffect, useState} from 'react';
-import {View, Text, TouchableOpacity, Image} from 'react-native';
-import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
+import React, { useEffect, useState } from 'react';
+import { View, Text, TouchableOpacity, Image } from 'react-native';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import BorderTextInput from '../../Components/BorderTextInput';
 import ButtonWithLoader from '../../Components/ButtonWithLoader';
 import GradientButton from '../../Components/GradientButton';
@@ -11,7 +11,7 @@ import {
   moderateScale,
 } from '../../styles/responsiveSize';
 import styles from './styles';
-import {otpTimerCounter} from '../../utils/helperFunctions';
+import { otpTimerCounter } from '../../utils/helperFunctions';
 import colors from '../../styles/colors';
 import fontFamily from '../../styles/fontFamily';
 import imagePath from '../../constants/imagePath';
@@ -19,13 +19,15 @@ import navigationStrings from '../../constants/navigationStrings';
 import TextInputWithLabel from '../../Components/TextInputWithLabel';
 import actions from '../../redux/actions/index';
 import validation from '../../utils/validation';
+import { loginUsingPhone } from '../../redux/actions/auth';
+import { color } from 'react-native-reanimated';
 
-export default function OtpVerification({navigation}) {
+export default function OtpVerification({ navigation }) {
   const [state, setState] = useState({
     email: '',
     password: '',
   });
-  const updateState = data => setState(state => ({...state, ...data}));
+  const updateState = data => setState(state => ({ ...state, ...data }));
 
   const moveToNewScreen = (screenName, data) => () => {
     navigation.navigate(screenName, {});
@@ -38,9 +40,22 @@ export default function OtpVerification({navigation}) {
     // }).then(res=>{
 
     // })
-    navigation.navigate(navigationStrings.OTP_VERIFICATION);
+
+    loginUsingPhone(
+      {
+        "contactDetails": {
+          "phoneNo": "9053857535",
+          "countryCode": "+91",
+          "countryCodeISO": "IN"
+        }
+      }).then((res) => {
+        console.log(res)
+        navigation.navigate(navigationStrings.OTP_VERIFICATION);
+      }).catch((error) =>
+        console.log(error)
+      )
   };
-  const {timer} = state;
+  const { timer } = state;
   return (
     <WrapperContainer>
       <KeyboardAwareScrollView
@@ -50,10 +65,10 @@ export default function OtpVerification({navigation}) {
 
           marginHorizontal: moderateScale(24),
         }}>
-        <View style={{height: moderateScaleVertical(100)}} />
+        <View style={{ height: moderateScaleVertical(100) }} />
         <Text style={styles.header}>{strings.LOGIN_YOUR_ACCOUNT}</Text>
         <Text style={styles.txtSmall}>{strings.ENTE_REGISTERED_EMAIL}</Text>
-        <View style={{height: moderateScaleVertical(50)}} />
+        <View style={{ height: moderateScaleVertical(50) }} />
         <BorderTextInput placeholder={strings.YOUR_EMAIL} />
         <BorderTextInput
           placeholder={strings.ENTER_PASSWORD}
@@ -61,11 +76,12 @@ export default function OtpVerification({navigation}) {
         />
 
         <ButtonWithLoader
-          containerStyle={{marginTop: moderateScaleVertical(10)}}
+          containerStyle={{ marginTop: moderateScaleVertical(10) }}
           onPress={_onLogin}
           btnText={strings.LOGIN_ACCOUNT}
+          style={{ backgroundColor: colors.black }}
         />
-        <View style={{marginTop: moderateScaleVertical(50)}}>
+        <View style={{ marginTop: moderateScaleVertical(50) }}>
           <View style={styles.socialRow}>
             <View style={styles.hyphen} />
             <Text style={styles.orText}>{strings.OR_LOGIN_WITH}</Text>

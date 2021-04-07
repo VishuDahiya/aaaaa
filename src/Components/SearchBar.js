@@ -1,11 +1,11 @@
 import React from 'react';
-import {View, Text, Image, TextInput} from 'react-native';
+import { View, Text, Image, TextInput } from 'react-native';
 import imagePath from '../constants/imagePath';
 import colors from '../styles/colors';
 import fontFamily from '../styles/fontFamily';
-import {moderateScale, moderateScaleVertical} from '../styles/responsiveSize';
+import { moderateScale, moderateScaleVertical } from '../styles/responsiveSize';
 
-export default function SearchBar({containerStyle = {}, placeholder = ''}) {
+export default function SearchBar({ containerStyle = {}, placeholder = 'Search' }) {
   return (
     <View
       style={{
@@ -16,8 +16,8 @@ export default function SearchBar({containerStyle = {}, placeholder = ''}) {
         alignItems: 'center',
         ...containerStyle,
       }}>
-      <Image style={{opacity: 0.7}} source={imagePath.search} />
-      <View style={{flex: 1,marginLeft:10}}>
+      <Image style={{ opacity: 0.7 }} source={imagePath.search} />
+      <View style={{ flex: 1, marginLeft: 10 }}>
         <TextInput
           style={{
             flex: 1,

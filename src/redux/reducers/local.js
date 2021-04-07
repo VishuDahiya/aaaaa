@@ -10,6 +10,9 @@ export default function (state = initialState, action) {
     case types.LOGIN: {
       return {...state};
     }
+    case types.ADD_To_CART: {
+      return {...state};
+    }
     default:
       return state;
   }

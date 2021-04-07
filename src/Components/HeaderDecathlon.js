@@ -1,4 +1,4 @@
-import {useNavigation} from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native';
 import React from 'react';
 import {
   Text,
@@ -12,9 +12,10 @@ import {
 import imagePath from '../constants/imagePath';
 import navigationStrings from '../constants/navigationStrings';
 
-function HeaderDecathlon() {
+function HeaderDecathlon(props) {
   const navigation = useNavigation();
-  let data = {data};
+  let data = { data };
+  const { onAddCount } = props;
 
   return (
     <>
@@ -39,13 +40,13 @@ function HeaderDecathlon() {
             borderWidth: 0.1,
             backgroundColor: 'white',
           }}>
-          <View style={{flexDirection: 'row'}}>
+          <View style={{ flexDirection: 'row' }}>
             <Image
               source={imagePath.headTop1}
-              style={{height: 38, width: 25}}
+              style={{ height: 38, width: 25 }}
             />
-            <View style={{marginLeft: 5}}>
-              <Text style={{fontSize: 13, fontWeight: 'bold'}}>
+            <View style={{ marginLeft: 5 }}>
+              <Text style={{ fontSize: 13, fontWeight: 'bold' }}>
                 Delivering to 160028
               </Text>
               <Text
@@ -59,7 +60,7 @@ function HeaderDecathlon() {
           </View>
           <Image
             source={imagePath.headTop}
-            style={{height: 90, width: 100, marginTop: -4}}
+            style={{ height: 90, width: 100, marginTop: -4 }}
           />
         </View>
         <View
@@ -91,11 +92,11 @@ function HeaderDecathlon() {
             }}>
             <Image
               source={imagePath.headSearch}
-              style={{height: 30, width: 25, marginHorizontal: 15}}
+              style={{ height: 30, width: 25, marginHorizontal: 15 }}
             />
             <TextInput
               placeholder="Search 70 Sports 5000 Products"
-              style={{paddingRight: 49}}
+              style={{ paddingRight: 49 }}
             />
           </View>
 
@@ -125,8 +126,10 @@ function HeaderDecathlon() {
                   backgroundColor: '#F5F5F5',
                 }}
               />
+
             </View>
           </TouchableOpacity>
+          <Text style={{ top: -25, left: -10, position: 'relative' }}>{onAddCount}</Text>
         </View>
       </View>
     </>

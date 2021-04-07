@@ -1,4 +1,4 @@
-import reducer from './reducers';
+import cartReducer from './reducers';
 import {createStore} from 'redux';
 
-export default createStore(reducer);
+export default createStore(cartReducer);

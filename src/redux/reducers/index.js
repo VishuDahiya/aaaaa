@@ -2,9 +2,11 @@ import {combineReducers} from 'redux';
 import auth from './auth';
 
 import types from '../types';
+import cartReducer from './cartReducer';
 
 const appReducer = combineReducers({
   auth,
+  cartReducer,
 });
 
 const rootReducer = (state, action) => {

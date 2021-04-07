@@ -13,6 +13,11 @@ export default function (state = initial_state, action) {
             const data = action.payload
             return { userData: data };
         }
+        case types.LOGOUT: {
+
+            // const data = action.payload
+            return { userData: {} };
+        }
 
         case types.NO_INTERNET: {
             const internetConnection = action.payload.internetConnection

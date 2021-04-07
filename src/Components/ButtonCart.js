@@ -1,11 +1,24 @@
 import React from 'react';
-import {View, Text, Stylesheet} from 'react-native';
-import styles from '../Screens/Login/styles';
-export default function ButtonCart() {
+import {View, Text, StyleSheet,TouchableOpacity} from 'react-native';
+import colors from '../styles/colors';
+
+export default function ButtonCart(props) {
+  const {style, btnText} = props
   return (
     <>
-      <Text
-        style={{
+    <TouchableOpacity style={{...styles.btnStyle, ...style}}>
+      <Text>
+       {btnText}
+       
+      </Text>
+      
+      </TouchableOpacity>
+    </>
+  );
+}
+
+const styles = StyleSheet.create({
+  btnStyle: {
           borderWidth: 0,
           textAlign: 'center',
           paddingVertical: 5,
@@ -15,11 +28,7 @@ export default function ButtonCart() {
           marginBottom: 8,
           fontSize: 15,
           marginTop: 8,
-          backgroundColor: '#318dc6',
           borderRadius: 3,
-        }}>
-        Add to cart
-      </Text>
-    </>
-  );
-}
+          backgroundColor:colors.black,
+  }
+})

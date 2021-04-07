@@ -1,18 +1,18 @@
 import axios from 'axios';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import {PermissionsAndroid, Platform} from 'react-native';
+import { PermissionsAndroid, Platform } from 'react-native';
 import store from '../redux/store';
 import types from '../redux/types';
-import {showError} from './helperFunctions';
+import { showError } from './helperFunctions';
 
 export async function getHeaders() {
   let userData = await AsyncStorage.getItem('userData');
   console.log(userData, 'the user data value ');
   if (userData) {
     userData = JSON.parse(userData);
-    console.log(userData.token, 'header');
+    console.log(userData.accessToken, 'header');
     return {
-      authorization: `Bearer ${userData.token}`,
+      authorization: `${userData.accessToken}`,
     };
   }
   return {};
@@ -79,9 +79,9 @@ export async function apiReq(
       };
     }
     console.log(headers);
-    axios[method](endPoint, data, {headers})
+    axios[method](endPoint, data, { headers })
       .then((result) => {
-        const {data} = result;
+        const { data } = result;
 
         if (data.status === false) {
           return rej(data);
@@ -93,7 +93,7 @@ export async function apiReq(
         console.log(error);
         console.log(error && error.response, 'the error respne');
         if (error && error.response && error.response.status === 401) {
-          const {dispatch} = store;
+          const { dispatch } = store;
           dispatch({
             type: types.CLEAR_REDUX_STATE,
             payload: {},
@@ -110,7 +110,7 @@ export async function apiReq(
           }
           return rej(error.response.data);
         } else {
-          return rej({message: 'Network Error', msg: 'Network Error'});
+          return rej({ message: 'Network Error', msg: 'Network Error' });
         }
         return rej(error);
       });
@@ -126,7 +126,7 @@ export function apiDelete(endPoint, data, headers = {}) {
 }
 
 export function apiGet(endPoint, data, headers = {}, requestOptions) {
-  return apiReq(endPoint, data, 'get', headers, requestOptions);
+  return apiReq(endPoint, data, 'get', headers);
 }
 
 export function apiPut(endPoint, data, headers = {}) {

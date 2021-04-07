@@ -1,8 +1,8 @@
 import React from 'react';
-import {View} from 'react-native';
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import { View } from 'react-native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import navigationStrings from '../constants/navigationStrings';
-import {Categories, Explore, Home, Profile} from '../Screens';
+import { Chart, Explore, Home, Profile, Search, ShowCart } from '../Screens';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 const Tab = createBottomTabNavigator();
 
@@ -13,25 +13,29 @@ export default function BottomTabNavigator() {
       activeColor="#ff3f6c"
       barStyle={{
         backgroundColor: 'white',
+      }}
+      tabBarOptions={{
+        labelStyle: {
+          fontSize: 14,
+          textAlign: 'center',
+        },
+        activeTintColor: "skyblue",
+
       }}>
       <Tab.Screen
         name={navigationStrings.HOME}
         component={Home}
         options={{
           tabBarLabel: 'Home',
-          tabBarIcon: ({color, size}) => (
-            <Ionicons name="home" color="black" size={25} />
-          ),
+
         }}
       />
       <Tab.Screen
-        name={navigationStrings.CATEGORIES}
-        component={Categories}
+        name={navigationStrings.SHOWCART}
+        component={ShowCart}
         options={{
-          tabBarLabel: 'Categories',
-          tabBarIcon: ({color, size}) => (
-            <Ionicons name="ios-home" color="black" size={25} />
-          ),
+          tabBarLabel: 'Cart',
+
         }}
       />
       <Tab.Screen
@@ -39,9 +43,21 @@ export default function BottomTabNavigator() {
         component={Explore}
         options={{
           tabBarLabel: 'Explore',
-          tabBarIcon: ({color, size}) => (
-            <Ionicons name="ios-home" color="black" size={25} />
-          ),
+
+        }}
+      />
+      <Tab.Screen
+        name={navigationStrings.SEARCH}
+        component={Search}
+        options={{
+          tabBarLabel: 'Search'
+        }}
+      />
+      <Tab.Screen
+        name={navigationStrings.CHART}
+        component={Chart}
+        options={{
+          tabBarLabel: 'Chart'
         }}
       />
       <Tab.Screen
@@ -50,11 +66,8 @@ export default function BottomTabNavigator() {
         options={{
           tabBarLabel: 'Profile',
 
-          tabBarIcon: ({color, size}) => (
-            <Ionicons name="ios-home" color="black" size={25} />
-          ),
         }}
       />
-    </Tab.Navigator>
+    </Tab.Navigator >
   );
 }
