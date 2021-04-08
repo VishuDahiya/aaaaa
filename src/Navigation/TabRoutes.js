@@ -2,7 +2,7 @@ import React from 'react';
 import { View } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import navigationStrings from '../constants/navigationStrings';
-import { Chart, Explore, Home, Profile, Search, ShowCart } from '../Screens';
+import { Chart, Chat, Explore, Home, Profile, Search, ShowCart } from '../Screens';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 const Tab = createBottomTabNavigator();
 
@@ -31,10 +31,10 @@ export default function BottomTabNavigator() {
         }}
       />
       <Tab.Screen
-        name={navigationStrings.SHOWCART}
-        component={ShowCart}
+        name={navigationStrings.CHAT}
+        component={Chat}
         options={{
-          tabBarLabel: 'Cart',
+          tabBarLabel: 'Chat',
 
         }}
       />

@@ -25,4 +25,5 @@ export default {
   CHART: 'Chart',
   QR_CODE: 'QrCode',
   IMAGE_ZOOM: 'ImageZoom',
+  CHAT: 'chat',
 };
