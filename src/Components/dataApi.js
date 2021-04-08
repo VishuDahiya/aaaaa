@@ -17,7 +17,6 @@ export default function DataApi(props) {
             profileImg,
             bio,
             lookingFor,
-            contactDetails,
         } = item;
 
         return (

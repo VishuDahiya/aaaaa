@@ -28,5 +28,5 @@ export default {
   whiteOpacity77: "rgba(255,255,255,0.77)",
   lightGreyBg: "#e8e8e8",
   selfOrange: "#E07C24",
-
+  darkBlue: "#070834",
 };

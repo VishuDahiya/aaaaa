@@ -1,32 +1,30 @@
 import React, { Component } from 'react';
-import { View, Text, FlatList } from 'react-native';
+import { View, Text, FlatList, StyleSheet, Image } from 'react-native';
+import imagePath from '../constants/imagePath';
+
 
 export default function ChatDisplay(props) {
     let { data } = props;
 
     let _renderItem = ({ item }) => {
         const {
-            addressDetails,
-            dob,
-            email,
-            questions,
-            fullName,
-            gender,
-            profileImg,
-            bio,
-            lookingFor,
-            contactDetails,
+            userInfo,
+            lastMessage,
         } = item;
 
         return (
-            <View>
-                <Text>cnlicn</Text>
+            <View style={styles.outerView}>
+                <View style={styles.innerView}>
+                    <Image source={{ uri: userInfo.profileImg[0].original }} style={styles.image} />
+                    <View style={styles.innerText}>
+                        <Text>{userInfo.fullName}</Text>
+                        <Text>{lastMessage[0].text}</Text>
+                    </View>
+                </View>
+                <Image source={imagePath.deleteButton} style={styles.deleteImg} />
             </View>
         )
     }
-
-
-
 
     return (
         <FlatList
@@ -39,3 +37,30 @@ export default function ChatDisplay(props) {
 
 
 }
+const styles = StyleSheet.create({
+    outerView: {
+        flexDirection: 'row',
+        marginBottom: 5,
+        paddingVertical: 5,
+        paddingHorizontal: 15,
+        justifyContent: 'space-between',
+        alignItems: 'center'
+    },
+    innerView: {
+        justifyContent: 'space-around',
+        flexDirection: 'row',
+    },
+    innerText: {
+        justifyContent: 'space-around'
+    },
+    image: {
+        height: 60,
+        width: 60,
+        borderRadius: 50,
+        marginRight: 15,
+    },
+    deleteImg: {
+        height: 28,
+        width: 25,
+    }
+})

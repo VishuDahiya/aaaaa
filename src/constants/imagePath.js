@@ -27,4 +27,5 @@ export default {
   back: require('../assets/images/ic_back.png'),
   backWithSquare: require('../assets/images/backWithSquare.png'),
   rightBlue: require('../assets/images/ic_goA.png'),
+  deleteButton: require('../assets/images/delete.png')
 };
