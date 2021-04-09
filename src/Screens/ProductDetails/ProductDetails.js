@@ -1,7 +1,7 @@
-import {useNavigation} from '@react-navigation/core';
-import React, {Component} from 'react';
-import {Text, View, Stylesheet, TouchableOpacity, Image} from 'react-native';
-import {TextInput} from 'react-native-gesture-handler';
+import { useNavigation } from '@react-navigation/core';
+import React, { Component } from 'react';
+import { Text, View, Stylesheet, TouchableOpacity, Image } from 'react-native';
+import { TextInput } from 'react-native-gesture-handler';
 import ButtonCart from '../../Components/ButtonCart';
 import imagePath from '../../constants/imagePath';
 import navigationStrings from '../../constants/navigationStrings';
@@ -9,7 +9,7 @@ import navigationStrings from '../../constants/navigationStrings';
 function ProductDetails(props) {
   const navigation = useNavigation();
   let item = props.route.params.data;
-  let {image1, name, type, discountPrice, originalPrice, offPrice} = item;
+  let { image1, name, type, discountPrice, originalPrice, offPrice } = item;
   return (
     <>
       <View
@@ -18,22 +18,22 @@ function ProductDetails(props) {
           marginBottom: 15,
           borderWidth: 0.1,
         }}>
-        <View style={{flexDirection: 'row', marginBottom: 20}}>
+        <View style={{ flexDirection: 'row', marginBottom: 20 }}>
           <TouchableOpacity onPress={() => navigation.goBack()}>
             <Image
               source={imagePath.backButton}
-              style={{marginLeft: 10, height: 20, width: 35}}
+              style={{ marginLeft: 10, height: 20, width: 35 }}
               title={'Go back'}
             />
           </TouchableOpacity>
         </View>
         <Image
           source={image1}
-          style={{height: 400, width: '100%', resizeMode: 'contain'}}
+          style={{ height: 400, width: '100%', resizeMode: 'contain' }}
         />
 
-        <View style={{marginLeft: 18, marginTop: 15}}>
-          <Text style={{fontWeight: 'bold', fontSize: 18}}>{name}</Text>
+        <View style={{ marginLeft: 18, marginTop: 15 }}>
+          <Text style={{ fontWeight: 'bold', fontSize: 18 }}>{name}</Text>
           <Text
             style={{
               color: 'grey',
@@ -43,8 +43,8 @@ function ProductDetails(props) {
             }}>
             {type}
           </Text>
-          <View style={{flexDirection: 'row'}}>
-            <Text style={{marginRight: 10, fontSize: 16}}>{discountPrice}</Text>
+          <View style={{ flexDirection: 'row' }}>
+            <Text style={{ marginRight: 10, fontSize: 16 }}>{discountPrice}</Text>
             <Text
               style={{
                 marginRight: 10,
@@ -52,29 +52,29 @@ function ProductDetails(props) {
               }}>
               {originalPrice}
             </Text>
-            <Text style={{fontSize: 16, color: '#E56717'}}>({offPrice})</Text>
+            <Text style={{ fontSize: 16, color: '#E56717' }}>({offPrice})</Text>
           </View>
-          <Text style={{color: '#00C78C', fontSize: 13}}>
+          <Text style={{ color: '#00C78C', fontSize: 13 }}>
             inclusive of all taxes
           </Text>
         </View>
       </View>
-      <View style={{marginLeft: 18, marginRight: 18}}>
+      <View style={{ marginLeft: 18, marginRight: 18 }}>
         <View
           style={{
             flexDirection: 'row',
             justifyContent: 'space-between',
             marginBottom: 17,
           }}>
-          <Text style={{color: 'grey', fontSize: 13}}>
+          <Text style={{ color: 'grey', fontSize: 13 }}>
             SELECT SIZE (UK SIZE)
           </Text>
-          <Text style={{color: '#318dc6', fontSize: 13, fontWeight: '700'}}>
+          <Text style={{ color: '#318dc6', fontSize: 13, fontWeight: '700' }}>
             SIZE CHART
           </Text>
         </View>
-        <View style={{flexDirection: 'row'}}>
-          <View style={{flexDirection: 'column'}}>
+        <View style={{ flexDirection: 'row' }}>
+          <View style={{ flexDirection: 'column' }}>
             <Text
               style={{
                 borderWidth: 1,
@@ -88,7 +88,7 @@ function ProductDetails(props) {
               6
             </Text>
           </View>
-          <View style={{marginLeft: 4, marginRight: 4}}>
+          <View style={{ marginLeft: 4, marginRight: 4 }}>
             <Text
               style={{
                 borderWidth: 1,

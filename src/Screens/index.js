@@ -13,3 +13,4 @@ export { default as Chart } from './Chart/Chart';
 export { default as QrCode } from './QrCode/QrCode';
 export { default as ImageZoom1 } from './ImageZoom/ImageZoom';
 export { default as Chat } from './Chat/Chat';
+export { default as ChatDetails } from './ChatDetails/ChatDetails';

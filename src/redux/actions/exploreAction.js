@@ -1,4 +1,4 @@
-import { CHAT_API, DATA_API, SEARCH_API } from "../../config/urls";
+import { CHAT_API, DATA_API, SEARCH_API, GET_USER_MESSAGE } from "../../config/urls";
 import { apiGet, apiPost } from "../../utils/utils";
 
 export const dataAPi = (data) => {
@@ -17,6 +17,11 @@ export function searchUser(query) {
 
 export function userMessage(query) {
   return apiGet(`${CHAT_API}${query}`);
+}
+
+
+export function getUserMessgeOneToOne(query = '') {
+  return apiGet(GET_USER_MESSAGE + query);
 }
 
 // export const searchApi = (data) => {

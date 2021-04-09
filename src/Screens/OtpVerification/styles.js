@@ -1,16 +1,16 @@
-import {StyleSheet} from 'react-native';
+import { StyleSheet } from 'react-native';
 import colors from '../../styles/colors';
 import commonStyles from '../../styles/commonStyles';
 import fontFamily from '../../styles/fontFamily';
 import {
-  moderateScaleVertical,
+  moderateVerticalScale,
   moderateScale,
   textScale,
 } from '../../styles/responsiveSize';
 
 export default StyleSheet.create({
-  backContainer:{
-    height: moderateScaleVertical(80),
+  backContainer: {
+    height: moderateVerticalScale(80),
     borderBottomColor: colors.borderLight,
     borderBottomWidth: 2,
     paddingHorizontal: moderateScale(24),
@@ -27,7 +27,7 @@ export default StyleSheet.create({
     lineHeight: 24,
     textAlign: 'center',
     fontFamily: fontFamily.medium,
-    marginTop: moderateScaleVertical(15),
+    marginTop: moderateVerticalScale(15),
   },
 
   root: {
@@ -35,9 +35,9 @@ export default StyleSheet.create({
     marginVertical: 30,
     justifyContent: 'space-between',
   },
- 
-  title: {textAlign: 'center', fontSize: 30},
-  codeFieldRoot: {marginTop: 20},
+
+  title: { textAlign: 'center', fontSize: 30 },
+  codeFieldRoot: { marginTop: 20 },
   cell: {
     width: textScale(60),
     height: textScale(60),

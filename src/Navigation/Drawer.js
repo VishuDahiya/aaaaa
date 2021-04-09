@@ -3,7 +3,7 @@ import { Button, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import navigationStrings from '../constants/navigationStrings';
-import { ImageZoom1, Profile, QrCode, Search } from '../Screens';
+import { ChatDetails, ImageZoom1, Profile, QrCode, Search } from '../Screens';
 import BottomTabNavigator from './TabRoutes';
 import colors from '../styles/colors';
 
@@ -29,6 +29,7 @@ export default function LeftDrawer() {
                 component={QrCode} />
             <Drawer.Screen name={navigationStrings.IMAGE_ZOOM}
                 component={ImageZoom1} />
+
         </Drawer.Navigator>
 
     )

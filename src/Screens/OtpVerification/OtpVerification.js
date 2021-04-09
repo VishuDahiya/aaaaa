@@ -12,7 +12,7 @@ import GradientButton from '../../Components/GradientButton';
 import WrapperContainer from '../../Components/WrapperContainer';
 import strings from '../../constants/lang';
 import {
-  moderateScaleVertical,
+  moderateVerticalScale,
   moderateScale,
 } from '../../styles/responsiveSize';
 import styles from './styles';
@@ -102,7 +102,7 @@ export default function OtpVerification({ navigation }) {
         }}>
         <Text style={styles.header}>{strings.OTP_VERIFICATION}</Text>
         <Text style={styles.txtSmall}>{strings.ENTER_OTP_SENT}</Text>
-        <View style={{ height: moderateScaleVertical(50) }} />
+        <View style={{ height: moderateVerticalScale(50) }} />
         <CodeField
           ref={ref}
           {...propsOtp}
@@ -125,7 +125,7 @@ export default function OtpVerification({ navigation }) {
         />
         <GradientButton
           onPress={onVerifyOtp}
-          containerStyle={{ marginTop: moderateScaleVertical(10) }}
+          containerStyle={{ marginTop: moderateVerticalScale(10) }}
           btnText={strings.VERIFY_ACCOUNT}
         />
         {timer > 0 ? (

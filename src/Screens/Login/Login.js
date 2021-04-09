@@ -7,8 +7,8 @@ import GradientButton from '../../Components/GradientButton';
 import WrapperContainer from '../../Components/WrapperContainer';
 import strings from '../../constants/lang';
 import {
-  moderateScaleVertical,
   moderateScale,
+  moderateVerticalScale,
 } from '../../styles/responsiveSize';
 import styles from './styles';
 import { otpTimerCounter } from '../../utils/helperFunctions';
@@ -65,10 +65,10 @@ export default function OtpVerification({ navigation }) {
 
           marginHorizontal: moderateScale(24),
         }}>
-        <View style={{ height: moderateScaleVertical(100) }} />
+        <View style={{ height: moderateVerticalScale(100) }} />
         <Text style={styles.header}>{strings.LOGIN_YOUR_ACCOUNT}</Text>
         <Text style={styles.txtSmall}>{strings.ENTE_REGISTERED_EMAIL}</Text>
-        <View style={{ height: moderateScaleVertical(50) }} />
+        <View style={{ height: moderateVerticalScale(50) }} />
         <BorderTextInput placeholder={strings.YOUR_EMAIL} />
         <BorderTextInput
           placeholder={strings.ENTER_PASSWORD}
@@ -76,12 +76,12 @@ export default function OtpVerification({ navigation }) {
         />
 
         <ButtonWithLoader
-          containerStyle={{ marginTop: moderateScaleVertical(10) }}
+          containerStyle={{ marginTop: moderateVerticalScale(10) }}
           onPress={_onLogin}
           btnText={strings.LOGIN_ACCOUNT}
           style={{ backgroundColor: colors.black }}
         />
-        <View style={{ marginTop: moderateScaleVertical(50) }}>
+        <View style={{ marginTop: moderateVerticalScale(50) }}>
           <View style={styles.socialRow}>
             <View style={styles.hyphen} />
             <Text style={styles.orText}>{strings.OR_LOGIN_WITH}</Text>

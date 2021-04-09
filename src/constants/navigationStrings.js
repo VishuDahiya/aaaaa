@@ -23,7 +23,8 @@ export default {
   SEARCH: 'Search',
   LEFT_DRAWER: 'leftDrawer',
   CHART: 'Chart',
-  QR_CODE: 'QrCode',
-  IMAGE_ZOOM: 'ImageZoom',
+  QR_CODE: 'Qr Code',
+  IMAGE_ZOOM: 'Image Zoom',
   CHAT: 'chat',
+  CHAT_DETAILS: 'Chat Details'
 };

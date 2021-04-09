@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
-import { View, Text, FlatList, StyleSheet, Image } from 'react-native';
+import { View, Text, FlatList, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import imagePath from '../constants/imagePath';
 
 
 export default function ChatDisplay(props) {
-    let { data } = props;
+    let { data, moveTo } = props;
 
     let _renderItem = ({ item }) => {
         const {
             userInfo,
             lastMessage,
+            commonConversationId,
         } = item;
 
         return (
@@ -17,8 +18,10 @@ export default function ChatDisplay(props) {
                 <View style={styles.innerView}>
                     <Image source={{ uri: userInfo.profileImg[0].original }} style={styles.image} />
                     <View style={styles.innerText}>
-                        <Text>{userInfo.fullName}</Text>
-                        <Text>{lastMessage[0].text}</Text>
+                        <TouchableOpacity onPress={() => moveTo(commonConversationId)}>
+                            <Text>{userInfo.fullName}</Text>
+                            <Text>{lastMessage[0].text}</Text>
+                        </TouchableOpacity>
                     </View>
                 </View>
                 <Image source={imagePath.deleteButton} style={styles.deleteImg} />

@@ -1,6 +1,6 @@
 import React from 'react';
 import navigationStrings from '../constants/navigationStrings';
-import { ProductDetails, ShowCart } from '../Screens';
+import { ChatDetails, ProductDetails, ShowCart } from '../Screens';
 import LeftDrawer from './Drawer';
 
 import BottomTabNavigator from './TabRoutes';
@@ -23,7 +23,10 @@ export default function (Stack) {
         component={ShowCart}
         options={{ headerShown: false }}
       />
-
+      <Stack.Screen
+        name={navigationStrings.CHAT_DETAILS}
+        component={ChatDetails}
+        options={{ headerShown: false }} />
     </>
   );
 }

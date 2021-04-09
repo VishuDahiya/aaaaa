@@ -60,7 +60,6 @@ export const loginUsingPhone = data => {
   )
 }
 export const logoutUsingPhone = () => {
-  alert('You are loged out')
   clearUserData()
     .then((res) => {
       dispatch({

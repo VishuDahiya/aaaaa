@@ -8,11 +8,11 @@ import {
 } from 'react-native';
 import {
   moderateScale,
-  moderateScaleVertical,
+  moderateVerticalScale,
   textScale,
 } from '../styles/responsiveSize';
 import colors from '../styles/colors';
-import commonStyles, {hitSlopProp} from '../styles/commonStyles';
+import commonStyles, { hitSlopProp } from '../styles/commonStyles';
 import fontFamily from '../styles/fontFamily';
 
 const TextInputWithLabel = ({
@@ -23,23 +23,23 @@ const TextInputWithLabel = ({
   secureTextEntry = false,
   rightIcon,
   customTextStyle = {},
-  placeholder="",
-  onPress = () => {},
-  onPressRightIcon = () => {},
+  placeholder = "",
+  onPress = () => { },
+  onPressRightIcon = () => { },
   ...rest
 }) => {
   let currentColor = active ? colors.themeColor : colors.textGrey;
   return (
-    <View style={{marginBottom: moderateScaleVertical(15)}}>
+    <View style={{ marginBottom: moderateVerticalScale(15) }}>
       <Text
         style={{
           ...commonStyles.fontSize14,
           color: currentColor,
-          marginBottom: moderateScaleVertical(7),
+          marginBottom: moderateVerticalScale(7),
         }}>
         {label}
       </Text>
-      <View style={{flexDirection: 'row'}}>
+      <View style={{ flexDirection: 'row' }}>
         <TextInput
           {...rest}
           placeholder={placeholder}
@@ -58,7 +58,7 @@ const TextInputWithLabel = ({
           <TouchableOpacity
             hitSlop={hitSlopProp}
             onPress={onPressRightIcon}
-            style={{alignItems: 'center', justifyContent: 'center',marginLeft:6}}>
+            style={{ alignItems: 'center', justifyContent: 'center', marginLeft: 6 }}>
             <Image source={rightIcon} />
           </TouchableOpacity>
         )}
@@ -73,11 +73,11 @@ const styles = StyleSheet.create({
   textInput: {
     borderWidth: 1,
     borderColor: colors.themeMain,
-    height: moderateScaleVertical(49),
-    fontSize: moderateScaleVertical(17.5),
+    height: moderateVerticalScale(49),
+    fontSize: moderateVerticalScale(17.5),
     fontFamily: fontFamily.regular,
     paddingVertical: 0,
-    paddingHorizontal: moderateScaleVertical(16),
+    paddingHorizontal: moderateVerticalScale(16),
     textAlignVertical: 'center',
   },
 });

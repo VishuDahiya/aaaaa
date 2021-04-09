@@ -9,3 +9,4 @@ export const OPT_VERIFICATION_API = 'https://api.talktier.com/user/v1/verifyOtp'
 export const DATA_API = 'https://api.talktier.com/user/v1/getUserSearch';
 export const SEARCH_API = 'https://api.talktier.com/user/v1/getUserNearMe';
 export const CHAT_API = 'https://api.talktier.com/user/v1/getAllConversations';
+export const GET_USER_MESSAGE = 'https://api.talktier.com/user/v1/getConversationMessages'
