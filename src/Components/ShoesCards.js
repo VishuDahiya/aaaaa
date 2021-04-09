@@ -35,63 +35,16 @@ export default function ShoesCard(props) {
         onPress={() =>
           navigation.navigate(navigationStrings.PRODUCTDETAILS, {data: item})
         }>
-        <View
-          style={{
-            borderRightWidth: 0.2,
-            borderBottomWidth: 0.2,
-            marginLeft: 1,
-            width: 210,
-          }}>
-          <Image source={image1} style={{height: 208, width: 208}}></Image>
+        <View style={styles.body}>
+          <Image source={image1} style={styles.image}></Image>
 
-          <Text
-            style={{
-              fontWeight: '700',
-              fontSize: 15,
-              marginTop: 4,
-              marginLeft: 8,
-              fontFamily: 'sans-serif',
-            }}>
-            {name}
-          </Text>
+          <Text style={styles.nameTxt}>{name}</Text>
 
-          <Text
-            style={{
-              fontSize: 13,
-              marginTop: -1,
-              marginLeft: 8,
-              color: 'grey',
-            }}>
-            {type}
-          </Text>
+          <Text style={styles.typeTxt}>{type}</Text>
           <View style={{flexDirection: 'row'}}>
-            <Text
-              style={{
-                fontSize: 14,
-                marginTop: 4,
-                marginLeft: 8,
-                fontWeight: 'bold',
-              }}>
-              {discountPrice}
-            </Text>
-            <Text
-              style={{
-                fontSize: 14,
-                marginTop: 4,
-                marginLeft: 8,
-                color: 'grey',
-              }}>
-              {originalPrice}
-            </Text>
-            <Text
-              style={{
-                fontSize: 12,
-                marginTop: 5,
-                marginLeft: 8,
-                color: '#E56717',
-              }}>
-              {offPrice}
-            </Text>
+            <Text style={styles.discountTxt}>{discountPrice}</Text>
+            <Text style={styles.originalTxt}>{originalPrice}</Text>
+            <Text style={styles.offTxt}>{offPrice}</Text>
           </View>
           <TouchableOpacity onPress={() => onAdd(item)}>
             <ButtonCart
@@ -113,3 +66,47 @@ export default function ShoesCard(props) {
     />
   );
 }
+
+const styles = StyleSheet.create({
+  body: {
+    borderRightWidth: 0.2,
+    borderBottomWidth: 0.2,
+    marginLeft: 1,
+    width: 210,
+  },
+  image: {
+    height: 208,
+    width: 208,
+  },
+  nameTxt: {
+    fontWeight: '700',
+    fontSize: 15,
+    marginTop: 4,
+    marginLeft: 8,
+    fontFamily: 'sans-serif',
+  },
+  typeTxt: {
+    fontSize: 13,
+    marginTop: -1,
+    marginLeft: 8,
+    color: colors.textGrey,
+  },
+  discountTxt: {
+    fontSize: 14,
+    marginTop: 4,
+    marginLeft: 8,
+    fontWeight: 'bold',
+  },
+  originalTxt: {
+    fontSize: 14,
+    marginTop: 4,
+    marginLeft: 8,
+    color: colors.textGrey,
+  },
+  offTxt: {
+    fontSize: 12,
+    marginTop: 5,
+    marginLeft: 8,
+    color: colors.orange,
+  },
+});
