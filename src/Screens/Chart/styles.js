@@ -1,7 +1,8 @@
-import {Stylesheet} from 'react-native';
+import {StyleSheet} from 'react-native';
 import colors from '../../styles/colors';
+import fontFamily from '../../styles/fontFamily';
 
-export default Stylesheet.create({
+export default StyleSheet.create({
   bargraph: {
     height: 300,
     width: 350,

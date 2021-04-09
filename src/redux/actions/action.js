@@ -1,4 +1,3 @@
-import DataApi from '../../Components/dataApi';
 import types from '../types';
 
 export function addToCart(value) {

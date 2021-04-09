@@ -3,7 +3,7 @@ import React from 'react';
 import {
   Text,
   View,
-  Stylesheet,
+  StyleSheet,
   Image,
   TextInput,
   TouchableOpacity,
@@ -27,7 +27,7 @@ function HeaderDecathlon(props) {
               source={imagePath.headTop1}
               style={styles.leftContentImage}
             />
-            <View style={leftContentTxt}>
+            <View style={styles.leftContentTxt}>
               <Text style={styles.deliveringTxt}>Delivering to 160028</Text>
               <Text style={styles.changeTxt}>CHANGE</Text>
             </View>

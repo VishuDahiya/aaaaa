@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text, View, Image, Stylesheet, ScrollView} from 'react-native';
+import {Text, View, Image, StyleSheet, ScrollView} from 'react-native';
 import imagePath from '../constants/imagePath';
 import colors from '../styles/colors';
 function HeaderCategoryDecathlon(props) {
@@ -17,7 +17,7 @@ function HeaderCategoryDecathlon(props) {
               <Image source={imagePath.scrollMen} style={styles.scrollImage} />
               <Text style={styles.scrollTxt}>MEN</Text>
             </View>
-            <View style={scrollContent}>
+            <View style={styles.scrollContent}>
               <Image
                 source={imagePath.scrollWomen}
                 style={styles.scrollImage}
@@ -47,7 +47,7 @@ function HeaderCategoryDecathlon(props) {
 }
 export default HeaderCategoryDecathlon;
 
-const styles = Stylesheet.create({
+const styles = StyleSheet.create({
   body: {
     backgroundColor: colors.white,
     marginVertical: 8,

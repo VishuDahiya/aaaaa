@@ -10,7 +10,7 @@ import {
   TextInput,
 } from 'react-native';
 import {MaterialIndicator} from 'react-native-indicators';
-import DataApi from '../../Components/dataApi';
+import DataApi from '../../Components/DataApi';
 import SearchData from '../../Components/SearchData';
 import WrapperContainer from '../../Components/WrapperContainer';
 import {dataAPi} from '../../redux/actions/exploreAction';
@@ -115,8 +115,8 @@ export default class Explore extends Component {
     console.log(profiles);
     return (
       <WrapperContainer isLoading={isLoading}>
-        <TextInput placeholder="Search" style={styles.search} />
-        <SearchData />
+        {/* <TextInput placeholder="Search" style={styles.search} />
+        <SearchData /> */}
         {
           <DataApi
             profiles={profiles}

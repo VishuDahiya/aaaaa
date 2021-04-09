@@ -1,9 +1,9 @@
-import {Stylesheet} from 'react-native';
+import {StyleSheet} from 'react-native';
 import colors from '../../styles/colors';
 import commonStyles from '../../styles/commonStyles';
 import fontFamily from '../../styles/fontFamily';
 
-export default Stylesheet.create({
+export default StyleSheet.create({
   header: {
     marginTop: 40,
     borderWidth: 0.1,

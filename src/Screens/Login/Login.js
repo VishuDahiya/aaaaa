@@ -20,7 +20,6 @@ import TextInputWithLabel from '../../Components/TextInputWithLabel';
 import actions from '../../redux/actions/index';
 import validation from '../../utils/validation';
 import {color} from 'react-native-reanimated';
-import styles from './styles';
 
 export default function OtpVerification({navigation}) {
   const [state, setState] = useState({
@@ -85,7 +84,7 @@ export default function OtpVerification({navigation}) {
           <View style={styles.socialRow}>
             <View style={styles.hyphen} />
             <Text style={styles.orText}>{strings.OR_LOGIN_WITH}</Text>
-            <View style={styles.hyphen} />
+            <View style={styxles.hyphen} />
           </View>
           <View style={styles.socialRowBtn}>
             <TouchableOpacity>
