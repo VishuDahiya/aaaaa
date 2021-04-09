@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import {
   Text,
   View,
@@ -9,13 +9,13 @@ import {
   FlatList,
   TextInput,
 } from 'react-native';
-import { MaterialIndicator } from 'react-native-indicators';
+import {MaterialIndicator} from 'react-native-indicators';
 import DataApi from '../../Components/dataApi';
-import SearchBar from '../../Components/SearchBar';
 import SearchData from '../../Components/SearchData';
 import WrapperContainer from '../../Components/WrapperContainer';
-import { dataAPi } from '../../redux/actions/exploreAction';
+import {dataAPi} from '../../redux/actions/exploreAction';
 import colors from '../../styles/colors';
+import styles from './styles';
 
 const LIMIT = '5';
 export default class Explore extends Component {
@@ -42,7 +42,7 @@ export default class Explore extends Component {
   };
 
   getData = (onEndReachCall = false) => {
-    const { skip, profiles, isListEnd } = this.state;
+    const {skip, profiles, isListEnd} = this.state;
 
     let calcSkip = onEndReachCall ? skip + profiles.length : 0;
 
@@ -81,41 +81,41 @@ export default class Explore extends Component {
       })
       .catch(err => {
         // console.log('this is the error: ', err);
-        this.setState({ isLoading: false, isLoadingMore: false });
+        this.setState({isLoading: false, isLoadingMore: false});
       });
   };
 
   _onRefresh = () => {
-    this.setState({ refreshing: true, isNoMoreData: false });
+    this.setState({refreshing: true, isNoMoreData: false});
     this.getData();
   };
   renderFooter = () => {
-    const { isLoadingMore } = this.state;
+    const {isLoadingMore} = this.state;
     if (isLoadingMore) {
       return (
-        <View style={{ paddingBottom: 40 }}>
+        <View style={{paddingBottom: 40}}>
           <MaterialIndicator color={colors.themeGreen} />
         </View>
       );
     }
-    return <View style={{ height: 50 }} />;
+    return <View style={{height: 50}} />;
   };
   onEndReached = () => {
-    const { isLoadingMore, isNoMoreData } = this.state;
+    const {isLoadingMore, isNoMoreData} = this.state;
 
     if (isLoadingMore || isNoMoreData) {
       return;
     }
-    this.setState({ isLoadingMore: true });
+    this.setState({isLoadingMore: true});
     this.getData(true);
   };
 
   render() {
-    const { isLoading, profiles, refreshing } = this.state;
+    const {isLoading, profiles, refreshing} = this.state;
     console.log(profiles);
     return (
       <WrapperContainer isLoading={isLoading}>
-        {/* <TextInput placeholder="Search" style={styles.search} /> */}
+        <TextInput placeholder="Search" style={styles.search} />
         <SearchData />
         {
           <DataApi
@@ -130,13 +130,3 @@ export default class Explore extends Component {
     );
   }
 }
-const styles = StyleSheet.create({
-  search: {
-    textAlign: 'center',
-    borderWidth: 0.2,
-    marginHorizontal: 10,
-    marginVertical: 10,
-    borderColor: colors.borderLight,
-    borderRadius: 2,
-  },
-});

@@ -1,162 +1,43 @@
 import React from 'react';
 import {Text, View, Image, Stylesheet, ScrollView} from 'react-native';
 import imagePath from '../constants/imagePath';
+import colors from '../styles/colors';
 function HeaderCategoryDecathlon(props) {
   let {data} = props;
   return (
-    <View style={{backgroundColor: 'white', marginVertical: 8}}>
+    <View style={styles.body}>
       <ScrollView showsVerticalScrollIndicator={false}>
         <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-          <View style={{flexDirection: 'row', paddingVertical: 10}}>
-            <View style={{flexDirection: 'column'}}>
-              <Image
-                source={imagePath.scrollSale}
-                style={{
-                  height: 70,
-                  width: 70,
-                  marginRight: 10,
-                  marginLeft: 10,
-                  borderRadius: 7,
-                }}
-              />
-              <Text
-                style={{
-                  marginLeft: 10,
-                  textAlign: 'center',
-                  marginTop: 5,
-                  fontWeight: 'normal',
-                  fontFamily: 'sans-serif',
-                  color: 'grey',
-                  fontSize: 12,
-                  width: 70,
-                }}>
-                OFFERS
-              </Text>
+          <View style={styles.header}>
+            <View style={styles.scrollContent}>
+              <Image source={imagePath.scrollSale} style={styles.scrollImage} />
+              <Text style={styles.scrollTxt}>OFFERS</Text>
             </View>
-            <View style={{flexDirection: 'column'}}>
-              <Image
-                source={imagePath.scrollMen}
-                style={{
-                  height: 70,
-                  width: 70,
-                  marginRight: 10,
-                  marginLeft: 10,
-                  borderRadius: 7,
-                }}
-              />
-              <Text
-                style={{
-                  marginLeft: 10,
-                  textAlign: 'center',
-                  marginTop: 5,
-                  fontWeight: 'normal',
-                  color: 'grey',
-                  fontFamily: 'sans-serif',
-                  fontSize: 13,
-                  width: 70,
-                }}>
-                MEN
-              </Text>
+            <View style={styles.scrollContent}>
+              <Image source={imagePath.scrollMen} style={styles.scrollImage} />
+              <Text style={styles.scrollTxt}>MEN</Text>
             </View>
-            <View style={{flexDirection: 'column'}}>
+            <View style={scrollContent}>
               <Image
                 source={imagePath.scrollWomen}
-                style={{
-                  height: 70,
-                  width: 70,
-                  marginRight: 10,
-                  marginLeft: 10,
-                  borderRadius: 7,
-                }}
+                style={styles.scrollImage}
               />
-              <Text
-                style={{
-                  marginLeft: 10,
-                  textAlign: 'center',
-                  marginTop: 5,
-                  fontWeight: 'normal',
-                  color: 'grey',
-                  fontFamily: 'sans-serif',
-                  fontSize: 13,
-                  width: 70,
-                }}>
-                WOMEN
-              </Text>
+              <Text style={styles.scrollTxt}>WOMEN</Text>
             </View>
-            <View style={{flexDirection: 'column'}}>
-              <Image
-                source={imagePath.scrollkid}
-                style={{
-                  height: 70,
-                  width: 70,
-                  marginRight: 10,
-                  marginLeft: 10,
-                  borderRadius: 7,
-                }}
-              />
-              <Text
-                style={{
-                  marginLeft: 10,
-                  textAlign: 'center',
-                  marginTop: 5,
-                  fontWeight: 'normal',
-                  color: 'grey',
-                  fontFamily: 'sans-serif',
-                  fontSize: 13,
-                  width: 70,
-                }}>
-                KIDS
-              </Text>
+            <View style={styles.scrollContent}>
+              <Image source={imagePath.scrollkid} style={styles.scrollImage} />
+              <Text style={styles.scrollTxt}>KIDS</Text>
             </View>
-            <View style={{flexDirection: 'column'}}>
+            <View style={styles.scrollContent}>
               <Image
                 source={imagePath.scrollBeauty}
-                style={{
-                  height: 70,
-                  width: 70,
-                  marginRight: 10,
-                  marginLeft: 10,
-                  borderRadius: 7,
-                }}
+                style={styles.scrollImage}
               />
-              <Text
-                style={{
-                  marginLeft: 10,
-                  marginTop: 5,
-                  textAlign: 'center',
-                  fontWeight: 'normal',
-                  color: 'grey',
-                  fontFamily: 'sans-serif',
-                  fontSize: 13,
-                  width: 70,
-                }}>
-                BEAUTY
-              </Text>
+              <Text style={styles.scrollTxt}>BEAUTY</Text>
             </View>
-            <View style={{flexDirection: 'column'}}>
-              <Image
-                source={imagePath.scrollHome}
-                style={{
-                  height: 70,
-                  width: 70,
-                  marginRight: 10,
-                  marginLeft: 10,
-                  borderRadius: 7,
-                }}
-              />
-              <Text
-                style={{
-                  marginLeft: 10,
-                  textAlign: 'center',
-                  marginTop: 5,
-                  fontWeight: 'normal',
-                  color: 'grey',
-                  fontFamily: 'sans-serif',
-                  fontSize: 13,
-                  width: 70,
-                }}>
-                HOME
-              </Text>
+            <View style={styles.scrollContent}>
+              <Image source={imagePath.scrollHome} style={styles.scrollImage} />
+              <Text style={styles.scrollTxt}>HOME</Text>
             </View>
           </View>
         </ScrollView>
@@ -165,3 +46,34 @@ function HeaderCategoryDecathlon(props) {
   );
 }
 export default HeaderCategoryDecathlon;
+
+const styles = Stylesheet.create({
+  body: {
+    backgroundColor: colors.white,
+    marginVertical: 8,
+  },
+  header: {
+    flexDirection: 'row',
+    paddingVertical: 10,
+  },
+  scrollContent: {
+    flexDirection: 'column',
+  },
+  scrollImage: {
+    height: 70,
+    width: 70,
+    marginRight: 10,
+    marginLeft: 10,
+    borderRadius: 7,
+  },
+  scrollTxt: {
+    marginLeft: 10,
+    textAlign: 'center',
+    marginTop: 5,
+    fontWeight: 'normal',
+    fontFamily: 'sans-serif',
+    color: colors.textGrey,
+    fontSize: 12,
+    width: 70,
+  },
+});

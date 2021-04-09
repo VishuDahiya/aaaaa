@@ -2,11 +2,12 @@
 // export const getApiUrl = endpoint => `${API_BASE_URL}${endpoint}`;
 // export const LOGIN_API = getApiUrl('/login');
 
-
 export const PHONE_API = 'https://api.talktier.com/user/v1/loginSignupOtp';
-export const OPT_VERIFICATION_API = 'https://api.talktier.com/user/v1/verifyOtp';
+export const OPT_VERIFICATION_API =
+  'https://api.talktier.com/user/v1/verifyOtp';
 
 export const DATA_API = 'https://api.talktier.com/user/v1/getUserSearch';
 export const SEARCH_API = 'https://api.talktier.com/user/v1/getUserNearMe';
 export const CHAT_API = 'https://api.talktier.com/user/v1/getAllConversations';
-export const GET_USER_MESSAGE = 'https://api.talktier.com/user/v1/getConversationMessages'
+export const GET_USER_MESSAGE =
+  'https://api.talktier.com/user/v1/getConversationMessages';

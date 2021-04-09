@@ -29,6 +29,5 @@ export function decreaseQuantity(index) {
   return {
     type: types.DECREASE_QUANTITY,
     payload: index,
-  }
+  };
 }
-

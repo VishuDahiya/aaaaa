@@ -26,5 +26,5 @@ export default {
   QR_CODE: 'Qr Code',
   IMAGE_ZOOM: 'Image Zoom',
   CHAT: 'chat',
-  CHAT_DETAILS: 'Chat Details'
+  CHAT_DETAILS: 'Chat Details',
 };

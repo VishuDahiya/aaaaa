@@ -19,7 +19,7 @@ import {Linking, Platform, PermissionsAndroid} from 'react-native';
 //     );
 //   });
 
-const showError = (message) => {
+const showError = message => {
   showMessage({
     type: 'danger',
     icon: 'danger',
@@ -27,7 +27,7 @@ const showError = (message) => {
   });
 };
 
-const showSuccess = (message) => {
+const showSuccess = message => {
   showMessage({
     type: 'success',
     icon: 'success',

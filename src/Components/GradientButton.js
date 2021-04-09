@@ -8,11 +8,11 @@ const GradientButton = ({
   containerStyle,
   btnStyle = {},
   colorsArray = [colors.btnABlue, colors.btnBBlue],
-  borderRadius =4,
+  borderRadius = 4,
   onPress,
   btnText,
-  marginTop=0,
-  marginBottom=0,
+  marginTop = 0,
+  marginBottom = 0,
   textStyle = {},
 }) => {
   return (

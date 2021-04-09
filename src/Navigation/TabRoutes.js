@@ -1,8 +1,16 @@
 import React from 'react';
-import { View } from 'react-native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import {View} from 'react-native';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import navigationStrings from '../constants/navigationStrings';
-import { Chart, Chat, Explore, Home, Profile, Search, ShowCart } from '../Screens';
+import {
+  Chart,
+  Chat,
+  Explore,
+  Home,
+  Profile,
+  Search,
+  ShowCart,
+} from '../Screens';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 const Tab = createBottomTabNavigator();
 
@@ -19,15 +27,13 @@ export default function BottomTabNavigator() {
           fontSize: 14,
           textAlign: 'center',
         },
-        activeTintColor: "skyblue",
-
+        activeTintColor: 'skyblue',
       }}>
       <Tab.Screen
         name={navigationStrings.HOME}
         component={Home}
         options={{
           tabBarLabel: 'Home',
-
         }}
       />
       <Tab.Screen
@@ -35,7 +41,6 @@ export default function BottomTabNavigator() {
         component={Chat}
         options={{
           tabBarLabel: 'Chat',
-
         }}
       />
       <Tab.Screen
@@ -43,21 +48,20 @@ export default function BottomTabNavigator() {
         component={Explore}
         options={{
           tabBarLabel: 'Explore',
-
         }}
       />
       <Tab.Screen
         name={navigationStrings.SEARCH}
         component={Search}
         options={{
-          tabBarLabel: 'Search'
+          tabBarLabel: 'Search',
         }}
       />
       <Tab.Screen
         name={navigationStrings.CHART}
         component={Chart}
         options={{
-          tabBarLabel: 'Chart'
+          tabBarLabel: 'Chart',
         }}
       />
       <Tab.Screen
@@ -65,9 +69,8 @@ export default function BottomTabNavigator() {
         component={Profile}
         options={{
           tabBarLabel: 'Profile',
-
         }}
       />
-    </Tab.Navigator >
+    </Tab.Navigator>
   );
 }

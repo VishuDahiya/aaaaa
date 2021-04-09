@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Text, View, Image, TouchableOpacity} from 'react-native';
 import {ScrollView} from 'react-native-gesture-handler';
-import Carousel from 'react-native-snap-carousel';
+import styles from './styles';
 
 export default class ItemInfo extends Component {
   constructor(props) {
@@ -15,35 +15,20 @@ export default class ItemInfo extends Component {
 
     let {id, image1, name, type, discountPrice, originalPrice, offPrice} = item;
     return (
-      <View style={{flex: 1, display: 'flex', marginTop: 30}}>
-        <ScrollView style={{height: 300, padding: 5}}>
-          <View style={{justifyContent: 'center', alignItems: 'center'}}>
-            <Image
-              style={{height: 350, width: 350, borderWidth: 1}}
-              source={{image1}}
-            />
+      <View style={styles.header}>
+        <ScrollView style={styles.scrollView}>
+          <View style={styles.view1}>
+            <Image style={styles.image} source={{image1}} />
           </View>
-          <View style={{backgroundColor: 'white', paddingBottom: 10}}>
-            <View
-              style={{
-                flexDirection: 'row',
-                marginTop: 10,
-                marginLeft: 10,
-                alignItems: 'center',
-              }}>
-              <Text style={{fontSize: 20, fontWeight: 'bold'}}>{name}</Text>
-              <Text style={{color: 'grey', marginLeft: 5}}>{type}</Text>
+          <View style={styles.view2}>
+            <View style={styles.view3}>
+              <Text style={styles.nameTxt}>{name}</Text>
+              <Text style={styles.type.Txt}>{type}</Text>
             </View>
-            <View style={{flexDirection: 'row', marginLeft: 10, marginTop: 5}}>
-              <Text style={{fontWeight: 'bold', fontSize: 15}}>
-                Rs.{discountPrice}
-              </Text>
-              <Text style={{marginLeft: 10, color: 'gray'}}>
-                Rs.{originalPrice}
-              </Text>
-              <Text style={{marginLeft: 10, color: '#e0436c'}}>
-                ({offPrice})
-              </Text>
+            <View style={styles.view4}>
+              <Text style={styles.discountTxt}>Rs.{discountPrice}</Text>
+              <Text style={styles.originalTxt}>Rs.{originalPrice}</Text>
+              <Text style={styles.offTxt}>({offPrice})</Text>
             </View>
           </View>
         </ScrollView>

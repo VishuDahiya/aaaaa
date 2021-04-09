@@ -21,14 +21,15 @@ import HeaderDecathlon from '../../Components/HeaderDecathlon';
 import HeaderCategoryDecathlon from '../../Components/HeaderCategoryDecathlon';
 import {connect} from 'react-redux';
 import {addToCart, deleteCart, editCart} from '../../redux/actions/action';
-import { getUserData } from '../../utils/utils';
+import {getUserData} from '../../utils/utils';
 
 class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
       shoesList: [
-        {qty:1,
+        {
+          qty: 1,
           id: 1,
           image1: require('../../assets/images/image4.jpg'),
           name: 'Roadster',
@@ -37,7 +38,8 @@ class Home extends Component {
           originalPrice: '₹̶3̶4̶9̶9̶',
           offPrice: '45 % OFF',
         },
-        {qty:1,
+        {
+          qty: 1,
           id: 2,
           image1: require('../../assets/images/image6.jpg'),
           name: 'Roadster',
@@ -46,7 +48,8 @@ class Home extends Component {
           originalPrice: '₹̶3̶4̶9̶9̶',
           offPrice: '45 % OFF',
         },
-        {qty:1,
+        {
+          qty: 1,
           id: 3,
           image1: require('../../assets/images/image2.jpg'),
           name: 'Roadster',
@@ -55,7 +58,8 @@ class Home extends Component {
           originalPrice: '₹̶3̶4̶9̶9̶',
           offPrice: '45 % OFF',
         },
-        {qty:1,
+        {
+          qty: 1,
           id: 4,
           image1: require('../../assets/images/image7.jpg'),
           name: 'Roadster',
@@ -65,7 +69,7 @@ class Home extends Component {
           offPrice: '45 % OFF',
         },
         {
-          qty:1,
+          qty: 1,
           id: 5,
           image1: require('../../assets/images/image8.jpg'),
           name: 'Roadster',
@@ -74,7 +78,8 @@ class Home extends Component {
           originalPrice: '₹̶3̶4̶9̶9̶',
           offPrice: '45 % OFF',
         },
-        {qty:1,
+        {
+          qty: 1,
           id: 6,
           image1: require('../../assets/images/image1.jpg'),
           name: 'Roadster',
@@ -83,7 +88,8 @@ class Home extends Component {
           originalPrice: '₹̶3̶4̶9̶9̶',
           offPrice: '45 % OFF',
         },
-        {qty:1,
+        {
+          qty: 1,
           id: 7,
           image1: require('../../assets/images/image6.jpg'),
           name: 'Roadster',
@@ -92,7 +98,8 @@ class Home extends Component {
           originalPrice: '₹̶3̶4̶9̶9̶',
           offPrice: '45 % OFF',
         },
-        {qty:1,
+        {
+          qty: 1,
           id: 8,
           image1: require('../../assets/images/image7.jpg'),
           name: 'Roadster',
@@ -101,7 +108,8 @@ class Home extends Component {
           originalPrice: '₹̶3̶4̶9̶9̶',
           offPrice: '45 % OFF',
         },
-        {qty:1,
+        {
+          qty: 1,
           id: 9,
           image1: require('../../assets/images/image8.jpg'),
           name: 'Roadster',
@@ -160,25 +168,23 @@ class Home extends Component {
     value: {name: 'vd', id: 1},
   };
   render() {
+    getUserData()
+      .then(res => console.log(res, '@@@@@@getUserData'))
+      .catch(err => console.log(err));
 
-
-
-    getUserData().then(res=>console.log(res, '@@@@@@getUserData')).catch(err=>console.log(err))
-    
     let {value} = this.state;
-    let {shoesList,} = this.state;
+    let {shoesList} = this.state;
     return (
       <>
-     
-        <HeaderDecathlon onAddCount={this.props.counter}/>
+        <HeaderDecathlon onAddCount={this.props.counter} />
         <ScrollView>
           {/* <Text>{this.props.counter}</Text> */}
           <HeaderCategoryDecathlon />
-            <MyCarousel />
+          <MyCarousel />
           <View style={{marginTop: 10}}>
             {<ShoesCard onAdd={this.props.addToCart} shoesList={shoesList} />}
           </View>
-        </ScrollView> 
+        </ScrollView>
       </>
     );
   }
@@ -186,15 +192,15 @@ class Home extends Component {
 
 const mapStateToProps = state => {
   return {
-  counter:state.cartReducer.counter
+    counter: state.cartReducer.counter,
   };
 };
 const mapDispatchToProps = dispatch => {
-  return ({
+  return {
     addToCart: value => dispatch(addToCart(value)),
     editCart: index => dispatch(editCart(index)),
     deleteCart: index => dispatch(deleteCart(index)),
-  })
+  };
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);

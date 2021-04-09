@@ -13,7 +13,7 @@ export default function CardLoader({
   listSize = 1,
   cardWidth = width * 0.5 - moderateScale(12),
   height = moderateScaleVertical(128),
-  containerStyle={},
+  containerStyle = {},
   isRow = false,
 }) {
   const contentCard = () => {

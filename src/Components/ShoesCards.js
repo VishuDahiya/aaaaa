@@ -9,16 +9,16 @@ import {
   SafeAreaView,
   Button,
 } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+import {useNavigation} from '@react-navigation/native';
 import navigationStrings from '../constants/navigationStrings';
 import ButtonCart from './ButtonCart';
 import colors from '../styles/colors';
 
 export default function ShoesCard(props) {
   const navigation = useNavigation();
-  const { shoesList, onAdd } = props;
+  const {shoesList, onAdd} = props;
 
-  let _renderItem = ({ item }) => {
+  let _renderItem = ({item}) => {
     const {
       qty,
       id,
@@ -33,7 +33,7 @@ export default function ShoesCard(props) {
     return (
       <TouchableOpacity
         onPress={() =>
-          navigation.navigate(navigationStrings.PRODUCTDETAILS, { data: item })
+          navigation.navigate(navigationStrings.PRODUCTDETAILS, {data: item})
         }>
         <View
           style={{
@@ -42,7 +42,7 @@ export default function ShoesCard(props) {
             marginLeft: 1,
             width: 210,
           }}>
-          <Image source={image1} style={{ height: 208, width: 208 }}></Image>
+          <Image source={image1} style={{height: 208, width: 208}}></Image>
 
           <Text
             style={{
@@ -64,7 +64,7 @@ export default function ShoesCard(props) {
             }}>
             {type}
           </Text>
-          <View style={{ flexDirection: 'row' }}>
+          <View style={{flexDirection: 'row'}}>
             <Text
               style={{
                 fontSize: 14,
@@ -94,8 +94,10 @@ export default function ShoesCard(props) {
             </Text>
           </View>
           <TouchableOpacity onPress={() => onAdd(item)}>
-            <ButtonCart style={{ backgroundColor: colors.btnBBlue }} btnText='ADD To CART' />
-
+            <ButtonCart
+              style={{backgroundColor: colors.btnBBlue}}
+              btnText="ADD To CART"
+            />
           </TouchableOpacity>
         </View>
       </TouchableOpacity>

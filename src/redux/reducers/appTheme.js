@@ -11,7 +11,7 @@ const initial_state = {
     bottomBarGradientA: 'rgba(50,181,252,1)',
     bottomBarGradientB: 'rgba(97,160,242,1)',
     backgroundGrey: '#F4F7FA',
-    currencyRed:"#F44746"
+    currencyRed: '#F44746',
   },
   themeLayouts: {},
 };

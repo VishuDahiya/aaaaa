@@ -21,7 +21,7 @@ const Header = ({
   onPressLeft,
   onPressRight,
   customRight,
-  hideRight=true
+  hideRight = true,
 }) => {
   const navigation = useNavigation();
   return (
@@ -33,19 +33,19 @@ const Header = ({
           alignItems: 'center',
           justifyContent: 'space-between',
         }}>
-          <View style={{alignItems:'flex-start',minWidth:moderateScale(72)}}>
-        <TouchableOpacity
-          hitSlop={hitSlopProp}
-          activeOpacity={0.7}
-          onPress={
-            !!onPressLeft
-              ? onPressLeft
-              : () => {
-                  navigation.goBack();
-                }
-          }>
-          <Image resizeMode="contain" source={leftIcon} />
-        </TouchableOpacity>
+        <View style={{alignItems: 'flex-start', minWidth: moderateScale(72)}}>
+          <TouchableOpacity
+            hitSlop={hitSlopProp}
+            activeOpacity={0.7}
+            onPress={
+              !!onPressLeft
+                ? onPressLeft
+                : () => {
+                    navigation.goBack();
+                  }
+            }>
+            <Image resizeMode="contain" source={leftIcon} />
+          </TouchableOpacity>
         </View>
         <Text
           style={{
@@ -55,16 +55,18 @@ const Header = ({
           }}>
           {centerTitle}
         </Text>
-        <View style={{alignItems:'flex-end',minWidth:moderateScale(72)}}>
-        {!!rightIcon ? (
-          <TouchableOpacity onPress={onPressRight}>
-            <Image source={rightIcon} />
-          </TouchableOpacity>
-        ) : !!customRight ? (
-          customRight()
-        ) : (
-         hideRight? <View style={{width: 25}} />:<Image source={imagePath.cartShop}/>
-        )}
+        <View style={{alignItems: 'flex-end', minWidth: moderateScale(72)}}>
+          {!!rightIcon ? (
+            <TouchableOpacity onPress={onPressRight}>
+              <Image source={rightIcon} />
+            </TouchableOpacity>
+          ) : !!customRight ? (
+            customRight()
+          ) : hideRight ? (
+            <View style={{width: 25}} />
+          ) : (
+            <Image source={imagePath.cartShop} />
+          )}
         </View>
       </View>
     </>

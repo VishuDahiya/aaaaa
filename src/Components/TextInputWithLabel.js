@@ -12,7 +12,7 @@ import {
   textScale,
 } from '../styles/responsiveSize';
 import colors from '../styles/colors';
-import commonStyles, { hitSlopProp } from '../styles/commonStyles';
+import commonStyles, {hitSlopProp} from '../styles/commonStyles';
 import fontFamily from '../styles/fontFamily';
 
 const TextInputWithLabel = ({
@@ -23,14 +23,14 @@ const TextInputWithLabel = ({
   secureTextEntry = false,
   rightIcon,
   customTextStyle = {},
-  placeholder = "",
-  onPress = () => { },
-  onPressRightIcon = () => { },
+  placeholder = '',
+  onPress = () => {},
+  onPressRightIcon = () => {},
   ...rest
 }) => {
   let currentColor = active ? colors.themeColor : colors.textGrey;
   return (
-    <View style={{ marginBottom: moderateVerticalScale(15) }}>
+    <View style={{marginBottom: moderateVerticalScale(15)}}>
       <Text
         style={{
           ...commonStyles.fontSize14,
@@ -39,7 +39,7 @@ const TextInputWithLabel = ({
         }}>
         {label}
       </Text>
-      <View style={{ flexDirection: 'row' }}>
+      <View style={{flexDirection: 'row'}}>
         <TextInput
           {...rest}
           placeholder={placeholder}
@@ -58,7 +58,11 @@ const TextInputWithLabel = ({
           <TouchableOpacity
             hitSlop={hitSlopProp}
             onPress={onPressRightIcon}
-            style={{ alignItems: 'center', justifyContent: 'center', marginLeft: 6 }}>
+            style={{
+              alignItems: 'center',
+              justifyContent: 'center',
+              marginLeft: 6,
+            }}>
             <Image source={rightIcon} />
           </TouchableOpacity>
         )}

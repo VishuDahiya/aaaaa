@@ -1,4 +1,5 @@
 import {useNavigation} from '@react-navigation/core';
+import {HeaderHeightContext} from '@react-navigation/stack';
 import React, {Component} from 'react';
 import {
   View,
@@ -11,9 +12,9 @@ import {
   FlatList,
 } from 'react-native';
 import {cos} from 'react-native-reanimated';
-import {ShowCart} from '..';
-import navigationStrings from '../../constant/navigationStrings';
 import imagePath from '../../constants/imagePath';
+import ShowCart from '../ShowCart/ShowCart';
+import styles from './styles';
 
 class Cart extends Component {
   render() {
@@ -21,39 +22,20 @@ class Cart extends Component {
 
     return (
       <>
-        <View
-          style={{
-            marginTop: 40,
-            borderWidth: 0.1,
-          }}>
-          <View
-            style={{
-              flexDirection: 'row',
-              marginBottom: 1,
-              backgroundColor: 'white',
-              padding: 20,
-            }}>
+        <View style={styles.header}>
+          <View style={styles.heading}>
             <TouchableOpacity onPress={() => this.props.navigation.goBack()}>
               <Image
                 source={imagePath.backButton}
-                style={{marginLeft: 10, height: 20, width: 35}}
+                style={backImage}
                 title={'Go back'}
               />
             </TouchableOpacity>
-            <Text
-              style={{
-                marginTop: -2,
-                marginLeft: 20,
-                fontWeight: 'bold',
-                color: 'grey',
-                fontSize: 18,
-              }}>
-              SHOPPING BAG
-            </Text>
+            <Text style={styles.headingText}>SHOPPING BAG</Text>
           </View>
         </View>
         <ScrollView showsVerticalScrollIndicator={false}>
-          <View style={{marginBottom: 50}}>
+          <View>
             {item.map((value, index) => {
               return <ShowCart data={value} />;
             })}
@@ -61,19 +43,7 @@ class Cart extends Component {
         </ScrollView>
         <View>
           <TouchableOpacity>
-            <Text
-              style={{
-                borderWidth: 0.1,
-                fontSize: 15,
-                padding: 13,
-                textAlign: 'center',
-                backgroundColor: '#ff3f6c',
-                marginHorizontal: 20,
-                color: 'white',
-                bottom: 10,
-              }}>
-              PLACE ORDER
-            </Text>
+            <Text style={styles.headingText1}>PLACE ORDER</Text>
           </TouchableOpacity>
         </View>
       </>

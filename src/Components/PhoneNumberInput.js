@@ -18,7 +18,7 @@ export default function PhoneNumberInput({
     countryPickerModalVisible: false,
   });
 
-  const _onCountryChange = (data) => {
+  const _onCountryChange = data => {
     setState({countryPickerModalVisible: false});
     onCountryChange(data);
   };
@@ -34,7 +34,7 @@ export default function PhoneNumberInput({
       style={{
         flexDirection: 'row',
         borderWidth: 1,
-        borderRadius:4,
+        borderRadius: 4,
         borderColor: colors.borderLight,
         height: moderateScale(49),
       }}>

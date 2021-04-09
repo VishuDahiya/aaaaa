@@ -13,7 +13,7 @@ export default function CelebrityLoader({
   listSize = 1,
   cardWidth = width * 0.297,
   height = moderateScaleVertical(128),
-  containerStyle={},
+  containerStyle = {},
   isRow = false,
 }) {
   const contentCard = () => {
@@ -26,8 +26,8 @@ export default function CelebrityLoader({
           titleStyles={{marginLeft: 0, paddingLeft: 0}}
           tHeight={height}
           pRows={1}
-          pWidth={[ "100%"]}
-          paragraphStyles={{marginTop:-4,marginBottom:10}}
+          pWidth={['100%']}
+          paragraphStyles={{marginTop: -4, marginBottom: 10}}
           containerStyles={{
             marginLeft: 0,
             marginRight: 0,

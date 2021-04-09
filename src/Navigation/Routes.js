@@ -1,8 +1,8 @@
 import * as React from 'react';
 //import NavigationService from './navigation/NavigationService';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-import { connect, useSelector } from 'react-redux';
+import {NavigationContainer} from '@react-navigation/native';
+import {createStackNavigator} from '@react-navigation/stack';
+import {connect, useSelector} from 'react-redux';
 
 import AuthStack from './AuthStack';
 import MainStack from './MainStack';
@@ -14,8 +14,6 @@ function Routes(props) {
   const userData = props.userData;
   console.log(userData, '@@@rooute page,');
 
-
-
   return (
     <NavigationContainer>
       <Stack.Navigator>
@@ -25,10 +23,10 @@ function Routes(props) {
     </NavigationContainer>
   );
 }
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
-    userData: state.auth.userData
-  }
-}
+    userData: state.auth.userData,
+  };
+};
 
 export default connect(mapStateToProps)(Routes);

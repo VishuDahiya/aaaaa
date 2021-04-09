@@ -18,7 +18,7 @@ const ListItemHorizontal = ({
   containerStyle = {},
   centerContainerStyle = {},
   centerHeadingStyle = {},
-  rightIconStyle={}
+  rightIconStyle = {},
 }) => {
   return (
     <TouchableOpacity

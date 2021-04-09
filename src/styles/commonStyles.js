@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native';
+import {StyleSheet} from 'react-native';
 
 import {
   textScale,
@@ -27,14 +27,13 @@ export default StyleSheet.create({
     fontSize: textScale(14),
     color: colors.textGrey,
     fontFamily: fontFamily.medium,
-    opacity: .7
-
+    opacity: 0.7,
   },
   mediumFont14Normal: {
     fontSize: textScale(14),
     color: colors.textGrey,
     fontFamily: fontFamily.medium,
-    opacity: 1
+    opacity: 1,
   },
   mediumFont16: {
     fontSize: textScale(14),
@@ -44,19 +43,17 @@ export default StyleSheet.create({
   futuraBtHeavyFont16: {
     fontSize: textScale(16),
     color: colors.black,
-    fontFamily: fontFamily.futuraBtHeavy
-
+    fontFamily: fontFamily.futuraBtHeavy,
   },
   futuraBtHeavyFont14: {
     fontSize: textScale(14),
     color: colors.black,
-    fontFamily: fontFamily.futuraBtHeavy
-
+    fontFamily: fontFamily.futuraBtHeavy,
   },
   futuraHeavyBt: {
     fontSize: textScale(16),
     color: colors.black,
-    fontFamily: fontFamily.futuraHeavyBt
+    fontFamily: fontFamily.futuraHeavyBt,
   },
   buttonRect: {
     height: moderateVerticalScale(46),
@@ -71,7 +68,7 @@ export default StyleSheet.create({
     backgroundColor: colors.white,
     borderRadius: 4,
     shadowColor: '#000',
-    shadowOffset: { width: 0, height: 1 },
+    shadowOffset: {width: 0, height: 1},
     shadowOpacity: 0.4,
     shadowRadius: 2,
     elevation: 2,
@@ -82,10 +79,10 @@ export default StyleSheet.create({
     fontFamily: fontFamily.futuraBtHeavy,
     textTransform: 'uppercase',
     color: colors.white,
-    textAlign: "center"
+    textAlign: 'center',
   },
   imgOverlay: {
     ...StyleSheet.absoluteFillObject,
-    backgroundColor: 'rgba(0,0,0,0.3)'
-  }
+    backgroundColor: 'rgba(0,0,0,0.3)',
+  },
 });

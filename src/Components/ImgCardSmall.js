@@ -8,12 +8,18 @@ import {
   moderateScale,
   moderateScaleVertical,
   textScale,
-  width
+  width,
 } from '../styles/responsiveSize';
 
-export default function ImgCardSmall({text, onPress=()=>{},containerStyle={}}) {
+export default function ImgCardSmall({
+  text,
+  onPress = () => {},
+  containerStyle = {},
+}) {
   return (
-    <TouchableOpacity onPress={onPress} style={[styles.imgContainer,containerStyle]}>
+    <TouchableOpacity
+      onPress={onPress}
+      style={[styles.imgContainer, containerStyle]}>
       <Image source={{uri: rectImage}} style={styles.imgSmall} />
       <View style={styles.imgOverlay} />
       <View style={styles.blurContainer}>

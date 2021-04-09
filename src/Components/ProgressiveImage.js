@@ -24,8 +24,8 @@ const ProgressiveImage = ({
   containerStyle = {},
   isCircular = false,
   defaultColor,
-  borderRadius=4,
-  borderStyle={},
+  borderRadius = 4,
+  borderStyle = {},
   ...props
 }) => {
   const [state, setState] = useState({
@@ -33,7 +33,7 @@ const ProgressiveImage = ({
     showIndicator: true,
   });
 
-  const updateState = (data) => setState((state) => ({...state, ...data}));
+  const updateState = data => setState(state => ({...state, ...data}));
 
   const onImageLoad = () => {
     // Animated.timing(this.imageAnimated, {
@@ -80,7 +80,11 @@ const ProgressiveImage = ({
       <AnimatedFastImage
         resizeMode={resizeMode}
         source={source}
-        style={[styles.imageOverlay, {borderRadius,...borderStyle,...extraProp}, style]}
+        style={[
+          styles.imageOverlay,
+          {borderRadius, ...borderStyle, ...extraProp},
+          style,
+        ]}
         onLoad={onImageLoad}
       />
     </View>
@@ -105,4 +109,3 @@ const styles = StyleSheet.create({
     width: moderateScale(264),
   },
 });
-

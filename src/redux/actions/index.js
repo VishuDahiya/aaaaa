@@ -1,5 +1,9 @@
-import * as auth from "./auth";
+import * as auth from './auth';
+import * as action from './action';
+import * as exploreAction from './exploreAction';
 
 export default {
-    ...auth,
-}
+  ...auth,
+  ...action,
+  exploreAction,
+};

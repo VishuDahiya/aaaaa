@@ -1,5 +1,5 @@
 import Carousel from 'react-native-snap-carousel';
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import {
   View,
   Dimensions,
@@ -37,14 +37,13 @@ export default class MyCarousel extends Component {
     ],
   };
 
-  _renderItem = ({ item, index }) => {
+  _renderItem = ({item, index}) => {
     return (
       <View style={style.slide}>
         <Image
           source={item.imgUrl}
-          style={{ width: 415, height: 230, borderRadius: 5 }}
+          style={{width: 415, height: 230, borderRadius: 5}}
         />
-
       </View>
     );
   };

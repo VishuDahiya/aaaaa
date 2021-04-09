@@ -12,7 +12,7 @@ export default function IconTextColumn({
   isActive = false,
   activeStyle = {},
 }) {
-  const currentTheme = useSelector((state) => state.appTheme);
+  const currentTheme = useSelector(state => state.appTheme);
   const {themeColors, themeLayouts} = currentTheme;
   return (
     <View
@@ -28,7 +28,10 @@ export default function IconTextColumn({
         },
         isActive && {backgroundColor: themeColors.themeOpacity20},
       ]}>
-      <Image style={{tintColor:isActive?colors.themeColor:colors.textGreyB}} source={icon} />
+      <Image
+        style={{tintColor: isActive ? colors.themeColor : colors.textGreyB}}
+        source={icon}
+      />
       <Text
         style={[
           {

@@ -1,4 +1,4 @@
-import { useNavigation } from '@react-navigation/native';
+import {useNavigation} from '@react-navigation/native';
 import React from 'react';
 import {
   Text,
@@ -11,92 +11,38 @@ import {
 } from 'react-native';
 import imagePath from '../constants/imagePath';
 import navigationStrings from '../constants/navigationStrings';
+import colors from '../styles/colors';
 
 function HeaderDecathlon(props) {
   const navigation = useNavigation();
-  let data = { data };
-  const { onAddCount } = props;
+  let data = {data};
+  const {onAddCount} = props;
 
   return (
     <>
-      <View
-        style={{
-          shadowColor: '#000',
-          shadowOffset: {
-            width: 0,
-            height: 3,
-          },
-          shadowOpacity: 0.27,
-          shadowRadius: 4.65,
-          elevation: 15,
-        }}>
-        <View
-          style={{
-            flexDirection: 'row',
-            marginTop: -10,
-            paddingHorizontal: 15,
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            borderWidth: 0.1,
-            backgroundColor: 'white',
-          }}>
-          <View style={{ flexDirection: 'row' }}>
+      <View style={styles.body}>
+        <View style={styles.header}>
+          <View style={styles.leftContent}>
             <Image
               source={imagePath.headTop1}
-              style={{ height: 38, width: 25 }}
+              style={styles.leftContentImage}
             />
-            <View style={{ marginLeft: 5 }}>
-              <Text style={{ fontSize: 13, fontWeight: 'bold' }}>
-                Delivering to 160028
-              </Text>
-              <Text
-                style={{
-                  fontSize: 12,
-                  textDecorationLine: 'underline',
-                }}>
-                CHANGE
-              </Text>
+            <View style={leftContentTxt}>
+              <Text style={styles.deliveringTxt}>Delivering to 160028</Text>
+              <Text style={styles.changeTxt}>CHANGE</Text>
             </View>
           </View>
-          <Image
-            source={imagePath.headTop}
-            style={{ height: 90, width: 100, marginTop: -4 }}
-          />
+          <Image source={imagePath.headTop} style={styles.rightContentImage} />
         </View>
-        <View
-          style={{
-            flexDirection: 'row',
-            alignItems: 'center',
-            paddingHorizontal: 0,
-            backgroundColor: 'white',
-            paddingBottom: 15,
-            marginTop: -10,
-          }}>
-          <View
-            style={{
-              flexDirection: 'row',
-              borderWidth: 0.2,
-              borderColor: '#F5F5F5',
-              alignItems: 'center',
-              marginHorizontal: 18,
-              backgroundColor: '#F5F5F5',
-              shadowColor: '#000',
-              shadowOffset: {
-                width: 0,
-                height: 3,
-              },
-              shadowOpacity: 0.27,
-              shadowRadius: 4.65,
-
-              elevation: 6,
-            }}>
+        <View style={styles.footer}>
+          <View style={styles.footerContent}>
             <Image
               source={imagePath.headSearch}
-              style={{ height: 30, width: 25, marginHorizontal: 15 }}
+              style={styles.footerContentImage}
             />
             <TextInput
               placeholder="Search 70 Sports 5000 Products"
-              style={{ paddingRight: 49 }}
+              style={styles.searchInputTxt}
             />
           </View>
 
@@ -104,32 +50,14 @@ function HeaderDecathlon(props) {
             onPress={() => {
               navigation.navigate(navigationStrings.SHOWCART);
             }}>
-            <View
-              style={{
-                borderWidth: 0.2,
-                borderColor: '#F5F5F5',
-                shadowColor: '#000',
-                shadowOffset: {
-                  width: 0,
-                  height: 3,
-                },
-                shadowOpacity: 0.27,
-                shadowRadius: 4.65,
-
-                elevation: 0,
-              }}>
+            <View style={styles.cartContent}>
               <Image
                 source={imagePath.headCart}
-                style={{
-                  height: 49,
-                  width: 50,
-                  backgroundColor: '#F5F5F5',
-                }}
+                style={styles.cartContentImage}
               />
-
             </View>
           </TouchableOpacity>
-          <Text style={{ top: -25, left: -10, position: 'relative' }}>{onAddCount}</Text>
+          <Text style={styles.addCountTxt}>{onAddCount}</Text>
         </View>
       </View>
     </>
@@ -137,3 +65,104 @@ function HeaderDecathlon(props) {
 }
 
 export default HeaderDecathlon;
+
+const styles = StyleSheet.create({
+  body: {
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 3,
+    },
+    shadowOpacity: 0.27,
+    shadowRadius: 4.65,
+    elevation: 15,
+  },
+  header: {
+    flexDirection: 'row',
+    marginTop: -10,
+    paddingHorizontal: 15,
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    borderWidth: 0.1,
+    backgroundColor: 'white',
+  },
+  leftContent: {
+    flexDirection: 'row',
+  },
+  leftContentImage: {
+    height: 38,
+    width: 25,
+  },
+  leftContentTxt: {
+    marginLeft: 5,
+  },
+  deliveringTxt: {
+    fontSize: 13,
+    fontWeight: 'bold',
+  },
+  changeTxt: {
+    fontSize: 12,
+    textDecorationLine: 'underline',
+  },
+  rightContentImage: {
+    height: 90,
+    width: 100,
+    marginTop: -4,
+  },
+  footer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingHorizontal: 0,
+    backgroundColor: colors.white,
+    paddingBottom: 15,
+    marginTop: -10,
+  },
+  footerContent: {
+    flexDirection: 'row',
+    borderWidth: 0.2,
+    borderColor: colors.textGreyLight,
+    alignItems: 'center',
+    marginHorizontal: 18,
+    backgroundColor: colors.textGreyLight,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 3,
+    },
+    shadowOpacity: 0.27,
+    shadowRadius: 4.65,
+
+    elevation: 6,
+  },
+  footerContentImage: {
+    height: 30,
+    width: 25,
+    marginHorizontal: 15,
+  },
+  searchInputTxt: {
+    paddingRight: 49,
+  },
+  cartContent: {
+    borderWidth: 0.2,
+    borderColor: colors.textGreyLight,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 3,
+    },
+    shadowOpacity: 0.27,
+    shadowRadius: 4.65,
+
+    elevation: 0,
+  },
+  cartContentImage: {
+    height: 49,
+    width: 50,
+    backgroundColor: colors.textGreyLight,
+  },
+  addCountTxt: {
+    top: -25,
+    left: -10,
+    position: 'relative',
+  },
+});

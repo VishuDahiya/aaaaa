@@ -5,5 +5,5 @@ export default {
   DELETE_CART: 'delete_cart',
   INCREASE_QUANTITY: 'increase_quantity',
   DECREASE_QUANTITY: 'decrease_quantity',
-  LOGOUT: "LOGOUT"
+  LOGOUT: 'LOGOUT',
 };
