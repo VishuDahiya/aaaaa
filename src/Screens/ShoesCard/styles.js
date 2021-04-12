@@ -1,5 +1,9 @@
 import {StyleSheet} from 'react-native';
 import colors from '../../styles/colors';
+import {
+  moderateScale,
+  moderateVerticalScale,
+} from '../../styles/responsiveSize';
 
 export default StyleSheet.create({
   body: {
@@ -9,14 +13,14 @@ export default StyleSheet.create({
     width: 210,
   },
   image: {
-    height: 208,
-    width: 208,
+    height: moderateScale(208),
+    width: moderateVerticalScale(20),
   },
   nameTxt: {
     fontWeight: '700',
     fontSize: 15,
-    marginTop: 4,
-    marginLeft: 8,
+    marginTop: 40,
+    marginLeft: 20,
     fontFamily: 'sans-serif',
   },
   typeTxt: {

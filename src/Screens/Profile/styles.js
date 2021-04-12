@@ -1,5 +1,9 @@
 import {StyleSheet} from 'react-native';
 import colors from '../../styles/colors';
+import {
+  moderateScale,
+  moderateVerticalScale,
+} from '../../styles/responsiveSize';
 
 export default StyleSheet.create({
   body: {
@@ -25,8 +29,8 @@ export default StyleSheet.create({
     padding: 16,
   },
   cameraStyling: {
-    height: 200,
-    width: 250,
+    width: moderateScale(40),
+    height: moderateVerticalScale(10),
     alignSelf: 'center',
     justifyContent: 'center',
   },

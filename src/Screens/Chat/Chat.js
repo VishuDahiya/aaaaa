@@ -4,6 +4,7 @@ import ChatDisplay from '../../Components/ChatDisplay';
 import Loader from '../../Components/Loader';
 import WrapperContainer from '../../Components/WrapperContainer';
 import navigationStrings from '../../constants/navigationStrings';
+import actions from '../../redux/actions';
 import {
   getUserMessgeOneToOne,
   userMessage,
@@ -30,17 +31,14 @@ export default class Chat extends Component {
     });
   };
 
-  getUserData = commonConversationId => {
+  goToChatScreen = (commonConversationId, id, Name, profileImage) => {
+    console.log(commonConversationId, id, '@@@@@usera data');
     let query = `?commonConversationId=${commonConversationId}`;
-    this.setState({isLoading: true, commonConversationData: []}, () => {
-      getUserMessgeOneToOne(query)
-        .then(res => {
-          this.props.navigation.navigate(navigationStrings.CHAT_DETAILS, {
-            chats: res.data,
-          });
-          this.setState({commonConversationData: res.data, isLoading: false});
-        })
-        .catch(err => this.setState({isLoading: false}));
+    this.props.navigation.navigate(navigationStrings.CHAT_DETAILS, {
+      commonConversationId,
+      id,
+      Name,
+      profileImage,
     });
   };
 
@@ -56,7 +54,7 @@ export default class Chat extends Component {
     return (
       <WrapperContainer>
         <Text style={styles.txt}>Messages</Text>
-        <ChatDisplay data={chats} moveTo={this.getUserData} />
+        <ChatDisplay data={chats} moveTo={this.goToChatScreen} />
       </WrapperContainer>
     );
   }

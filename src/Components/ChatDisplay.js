@@ -23,7 +23,15 @@ export default function ChatDisplay(props) {
             style={styles.image}
           />
           <View style={styles.innerText}>
-            <TouchableOpacity onPress={() => moveTo(commonConversationId)}>
+            <TouchableOpacity
+              onPress={() =>
+                moveTo(
+                  commonConversationId,
+                  userInfo._id,
+                  userInfo.fullName,
+                  userInfo.profileImg[0].original,
+                )
+              }>
               <Text>{userInfo.fullName}</Text>
               <Text>{lastMessage[0].text}</Text>
             </TouchableOpacity>

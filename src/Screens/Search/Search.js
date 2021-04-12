@@ -3,7 +3,7 @@ import {View, Text, TextInput, StyleSheet} from 'react-native';
 import Loader from '../../Components/Loader';
 import UserDataSearch from '../../Components/UserDataSearch';
 import WrapperContainer from '../../Components/WrapperContainer';
-import {searchUser} from '../../redux/actions/exploreAction';
+import actions from '../../redux/actions';
 import styles from './styles';
 
 class Search extends Component {
@@ -15,7 +15,8 @@ class Search extends Component {
 
   getData = query => {
     this.setState({isLoading: true});
-    searchUser(query)
+    actions
+      .searchUser(query)
       .then(res => {
         console.log(res);
         this.setState({data: res.data, isLoading: false});

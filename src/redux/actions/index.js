@@ -5,5 +5,5 @@ import * as exploreAction from './exploreAction';
 export default {
   ...auth,
   ...action,
-  exploreAction,
+  ...exploreAction,
 };

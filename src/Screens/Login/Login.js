@@ -41,7 +41,7 @@ export default function OtpVerification({navigation}) {
     // })
 
     actions
-      .loginUsingPhonelogin({
+      .loginUsingPhone({
         contactDetails: {
           phoneNo: '9053857535',
           countryCode: '+91',
@@ -84,7 +84,7 @@ export default function OtpVerification({navigation}) {
           <View style={styles.socialRow}>
             <View style={styles.hyphen} />
             <Text style={styles.orText}>{strings.OR_LOGIN_WITH}</Text>
-            <View style={styxles.hyphen} />
+            <View style={styles.hyphen} />
           </View>
           <View style={styles.socialRowBtn}>
             <TouchableOpacity>

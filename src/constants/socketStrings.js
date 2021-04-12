@@ -1,0 +1,16 @@
+export const SOCKET_STRINGS = {
+  SEND_MESSAGE: 'sendMessage',
+  SEEN_ALL_MESSAGES: 'seenAllMessages',
+  RECEIVED_MESSAGE: 'receiveMessage',
+  ACKNOWLEDGED_SENT_BY_REAEIVER: 'acknowledged',
+  RECEIVED_ALL_MESSAGES_LIST: 'receiveAllMessage',
+  LAST_CONVERSATION_NEW_MESSAGE: 'lastConversationCount',
+  FAVORITE_NEW_MESSAGE: 'favoriteMessageCount',
+  ALL_CONVERSATION_MESSAGE_LIST: 'allConversation',
+  FAVORITE_CONVERSATION_LIST: 'favoriteMessageAll',
+  NEW_NOTIFICATION: 'msgFromAdmin',
+  NEW_MESSAGE: 'newMessage',
+  RIGHT_SWIPE: 'rightSwipe',
+  LEVEL_UP: 'levelUp',
+  WAVESLEFT: 'wavesLeft',
+};

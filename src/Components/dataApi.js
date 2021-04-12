@@ -31,7 +31,7 @@ export default function DataApi(props) {
         <View style={styles.innerView}>
           <View>
             <Image
-              source={{uri: profileImg[1].original}}
+              source={{uri: profileImg[0].original}}
               style={styles.imageStyle}
             />
             <View style={styles.contentsTxt}>

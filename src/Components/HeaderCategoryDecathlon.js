@@ -2,6 +2,7 @@ import React from 'react';
 import {Text, View, Image, StyleSheet, ScrollView} from 'react-native';
 import imagePath from '../constants/imagePath';
 import colors from '../styles/colors';
+
 function HeaderCategoryDecathlon(props) {
   let {data} = props;
   return (

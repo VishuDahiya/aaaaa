@@ -10,7 +10,7 @@ import {
 } from 'react-native';
 import colors from '../styles/colors';
 import commonStyles, {hitSlopProp} from '../styles/commonStyles';
-import {moderateScaleVertical, textScale} from '../styles/responsiveSize';
+import {moderateVerticalScale, textScale} from '../styles/responsiveSize';
 import fontFamily from '../styles/fontFamily';
 
 export default function BorderTextInput({
@@ -41,7 +41,7 @@ export default function BorderTextInput({
     <View
       style={{
         flexDirection: 'row',
-        height: moderateScaleVertical(49),
+        height: moderateVerticalScale(49),
         color: colors.white,
         borderWidth: 1,
         borderRadius: 4,

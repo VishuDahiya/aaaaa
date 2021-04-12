@@ -72,6 +72,7 @@ export const otpVerificationLogin = data => {
     apiPost(OPT_VERIFICATION_API, data)
       .then(res => {
         setUserData(res.data);
+        saveUserData(res.data);
         resolve(res);
       })
       .catch(error => {

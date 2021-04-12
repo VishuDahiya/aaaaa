@@ -1,5 +1,11 @@
 import {StyleSheet} from 'react-native';
 import colors from '../../styles/colors';
+import commonStyles from '../../styles/commonStyles';
+import {
+  moderateScale,
+  moderateVerticalScale,
+  textScale,
+} from '../../styles/responsiveSize';
 
 export default StyleSheet.create({
   header: {
@@ -15,8 +21,14 @@ export default StyleSheet.create({
     marginRight: 15,
   },
   txt: {
+    fontSize: textScale(18),
     color: colors.white,
-    fontSize: 19,
+    marginRight: 10,
+  },
+  profileImage: {
+    height: moderateVerticalScale(40),
+    width: moderateScale(40),
+    borderRadius: 50,
     marginRight: 10,
   },
 });
