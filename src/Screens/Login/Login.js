@@ -20,6 +20,7 @@ import TextInputWithLabel from '../../Components/TextInputWithLabel';
 import actions from '../../redux/actions/index';
 import validation from '../../utils/validation';
 import {color} from 'react-native-reanimated';
+import {showMessage} from 'react-native-flash-message';
 
 export default function OtpVerification({navigation}) {
   const [state, setState] = useState({
@@ -30,6 +31,28 @@ export default function OtpVerification({navigation}) {
 
   const moveToNewScreen = (screenName, data) => () => {
     navigation.navigate(screenName, {});
+  };
+
+  onChange = key => {
+    return value => {
+      this.setState({
+        [key]: value,
+      });
+    };
+  };
+
+  isValidData = () => {
+    let {email, password} = this.setState;
+    const error = validation({email: email, password: password});
+    if (error) {
+      showMessage({
+        type: 'danger',
+        icon: 'danger',
+        message: error,
+      });
+      return falsel;
+    }
+    return true;
   };
 
   const _onLogin = () => {
@@ -68,10 +91,14 @@ export default function OtpVerification({navigation}) {
         <Text style={styles.header}>{strings.LOGIN_YOUR_ACCOUNT}</Text>
         <Text style={styles.txtSmall}>{strings.ENTE_REGISTERED_EMAIL}</Text>
         <View style={{height: moderateVerticalScale(50)}} />
-        <BorderTextInput placeholder={strings.YOUR_EMAIL} />
+        <BorderTextInput
+          placeholder={strings.YOUR_EMAIL}
+          onChangeText={this.onChange('email')}
+        />
         <BorderTextInput
           placeholder={strings.ENTER_PASSWORD}
           secureTextEntry={true}
+          onChangeText={this.onChange('password')}
         />
 
         <ButtonWithLoader
