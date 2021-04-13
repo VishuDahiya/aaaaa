@@ -27,4 +27,5 @@ export default {
   IMAGE_ZOOM: 'Image Zoom',
   CHAT: 'chat',
   CHAT_DETAILS: 'Chat Details',
+  OUTER_SLIDER_SCREEN: 'Outer Slider Screen',
 };

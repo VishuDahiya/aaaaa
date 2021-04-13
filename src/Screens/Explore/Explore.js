@@ -89,6 +89,7 @@ export default class Explore extends Component {
     this.setState({refreshing: true, isNoMoreData: false});
     this.getData();
   };
+
   renderFooter = () => {
     const {isLoadingMore} = this.state;
     if (isLoadingMore) {

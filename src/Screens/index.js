@@ -15,3 +15,4 @@ export {default as ImageZoom1} from './ImageZoom/ImageZoom';
 export {default as Chat} from './Chat/Chat';
 export {default as ChatDetails} from './ChatDetails/ChatDetails';
 export {default as ShoeCartList} from './ShowCartList/ShowCartList';
+export {default as OuterSliderScreen} from './OuterSliderScree/OuterSliderScreen';

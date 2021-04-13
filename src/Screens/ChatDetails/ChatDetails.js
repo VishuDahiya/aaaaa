@@ -16,10 +16,12 @@ import socketServices from '../../utils/socketSevice';
 import actions from '../../redux/actions';
 import {getUserMessgeOneToOne} from '../../redux/actions/exploreAction';
 import {SOCKET_STRINGS} from '../../constants/socketStrings';
+import WrapperContainer from '../../Components/WrapperContainer';
 
 class ChatDetails extends Component {
   state = {
     messages: [],
+    isLoading: true,
   };
 
   componentDidMount() {
@@ -138,10 +140,10 @@ class ChatDetails extends Component {
     } = this.props.route.params;
     // console.log(commonConversationId, id, fullName, profileImg);
     const {userData} = this.props;
-    const {messages} = this.state;
+    const {messages, isLoading} = this.state;
     console.log(messages, 'THIS IS MESSAGES');
     return (
-      <>
+      <WrapperContainer isLoading={isLoading}>
         <View style={styles.header}>
           <TouchableOpacity onPress={() => this.props.navigation.goBack()}>
             <Image source={imagePath.backButton} style={styles.image} />
@@ -157,7 +159,7 @@ class ChatDetails extends Component {
             _id: userData._id,
           }}
         />
-      </>
+      </WrapperContainer>
     );
   }
 }

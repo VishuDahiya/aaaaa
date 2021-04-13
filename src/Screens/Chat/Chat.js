@@ -32,8 +32,6 @@ export default class Chat extends Component {
   };
 
   goToChatScreen = (commonConversationId, id, Name, profileImage) => {
-    console.log(commonConversationId, id, '@@@@@usera data');
-    let query = `?commonConversationId=${commonConversationId}`;
     this.props.navigation.navigate(navigationStrings.CHAT_DETAILS, {
       commonConversationId,
       id,

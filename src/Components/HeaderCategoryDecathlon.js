@@ -1,6 +1,7 @@
 import React from 'react';
 import {Text, View, Image, StyleSheet, ScrollView} from 'react-native';
 import imagePath from '../constants/imagePath';
+import strings from '../constants/lang';
 import colors from '../styles/colors';
 
 function HeaderCategoryDecathlon(props) {
@@ -12,7 +13,7 @@ function HeaderCategoryDecathlon(props) {
           <View style={styles.header}>
             <View style={styles.scrollContent}>
               <Image source={imagePath.scrollSale} style={styles.scrollImage} />
-              <Text style={styles.scrollTxt}>OFFERS</Text>
+              <Text style={styles.scrollTxt}>{strings.OFFERS}</Text>
             </View>
             <View style={styles.scrollContent}>
               <Image source={imagePath.scrollMen} style={styles.scrollImage} />

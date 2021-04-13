@@ -29,8 +29,8 @@ export default StyleSheet.create({
     padding: 16,
   },
   cameraStyling: {
-    width: moderateScale(40),
-    height: moderateVerticalScale(10),
+    width: moderateScale(50),
+    height: moderateVerticalScale(300),
     alignSelf: 'center',
     justifyContent: 'center',
   },

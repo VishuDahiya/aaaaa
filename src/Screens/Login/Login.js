@@ -33,28 +33,6 @@ export default function OtpVerification({navigation}) {
     navigation.navigate(screenName, {});
   };
 
-  onChange = key => {
-    return value => {
-      this.setState({
-        [key]: value,
-      });
-    };
-  };
-
-  isValidData = () => {
-    let {email, password} = this.setState;
-    const error = validation({email: email, password: password});
-    if (error) {
-      showMessage({
-        type: 'danger',
-        icon: 'danger',
-        message: error,
-      });
-      return falsel;
-    }
-    return true;
-  };
-
   const _onLogin = () => {
     // actions.login({
     //   email:"ha@hyp.com",
@@ -84,21 +62,16 @@ export default function OtpVerification({navigation}) {
         showsVerticalScrollIndicator={false}
         style={{
           flex: 1,
-
           marginHorizontal: moderateScale(24),
         }}>
         <View style={{height: moderateVerticalScale(100)}} />
         <Text style={styles.header}>{strings.LOGIN_YOUR_ACCOUNT}</Text>
         <Text style={styles.txtSmall}>{strings.ENTE_REGISTERED_EMAIL}</Text>
         <View style={{height: moderateVerticalScale(50)}} />
-        <BorderTextInput
-          placeholder={strings.YOUR_EMAIL}
-          onChangeText={this.onChange('email')}
-        />
+        <BorderTextInput placeholder={strings.YOUR_EMAIL} />
         <BorderTextInput
           placeholder={strings.ENTER_PASSWORD}
           secureTextEntry={true}
-          onChangeText={this.onChange('password')}
         />
 
         <ButtonWithLoader
