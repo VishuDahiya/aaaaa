@@ -6,24 +6,18 @@ import navigationStrings from '../constants/navigationStrings';
 const slides = [
   {
     key: 'one',
-    title: 'Screen1',
     text: 'Description.\nSay something cool',
-    image: require('../assets/images/background1.jpg'),
-    backgroundColor: '#59b2ab',
+    image: require('../assets/images/slider.png'),
   },
   {
     key: 'two',
-    title: 'Screen 2',
     text: 'Other cool stuff',
-    image: require('../assets/images/background1.jpg'),
-    backgroundColor: '#febe29',
+    image: require('../assets/images/slider1.jpg'),
   },
   {
     key: 'three',
-    title: 'Rocket guy',
     text: "I'm already out of descriptions\n\nLorem ipsum bla bla bla",
-    image: require('../assets/images/background1.jpg'),
-    backgroundColor: '#22bcb5',
+    image: require('../assets/images/slider.png'),
   },
 ];
 

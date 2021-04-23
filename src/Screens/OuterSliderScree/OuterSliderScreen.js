@@ -7,15 +7,13 @@ import styles from './styles';
 
 class OuterSliderScreen extends Component {
   _onDone = () => {
-    // User finished the introduction. Show real app through
-    // navigation or simply by controlling state
-    this.props.navigation.navigate(navigationStrings.OUTER_SCREEN);
+    this.props.navigation.navigate(navigationStrings.LOGIN);
   };
   render() {
     return (
-      <WrapperContainer>
+      <>
         <OuterScreenSlider _onDone={this._onDone} />
-      </WrapperContainer>
+      </>
     );
   }
 }
